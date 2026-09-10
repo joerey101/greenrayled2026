@@ -23,48 +23,7 @@ export default function Home() {
       <Header />
       <Hero />
 
-      <section className="manifesto section-shell" id="green-ray">
-        <div className="manifesto-grid">
-          <SectionIntro
-            number={t.manifesto.number}
-            label={t.manifesto.label}
-            title={<>{t.manifesto.titleLine1}<br />{t.manifesto.titleLine2}</>}
-          />
-          <div className="manifesto-copy">
-            <p className="lead">{t.manifesto.lead}</p>
-            <p>{t.manifesto.copy}</p>
-            <ArrowLink href="#profesionales">{t.manifesto.cta}</ArrowLink>
-          </div>
-        </div>
-      </section>
-
-      <section className="audiences section-shell" id="profesionales">
-        <article className="audience-block">
-          <div className="audience-number">{t.audiences.prof.number}</div>
-          <p className="micro-label">{t.audiences.prof.label}</p>
-          <h2>{t.audiences.prof.titleLine1}<br />{t.audiences.prof.titleLine2}</h2>
-          <p>{t.audiences.prof.copy}</p>
-          <ul>
-            {t.audiences.prof.items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <ArrowLink href="#contacto">{t.audiences.prof.cta}</ArrowLink>
-        </article>
-        <article className="audience-block audience-secondary" id="residencial">
-          <div className="audience-number">{t.audiences.res.number}</div>
-          <p className="micro-label">{t.audiences.res.label}</p>
-          <h2>{t.audiences.res.titleLine1}<br />{t.audiences.res.titleLine2}</h2>
-          <p>{t.audiences.res.copy}</p>
-          <ul>
-            {t.audiences.res.items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <ArrowLink href="#contacto">{t.audiences.res.cta}</ArrowLink>
-        </article>
-      </section>
-
+      {/* 01. Productos / Colecciones */}
       <section className="lines-section" id="lineas">
         <div className="section-shell">
           <SectionIntro
@@ -97,6 +56,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 02. Proyectos Destacados */}
       <section className="projects section-shell" id="proyectos">
         <div className="projects-head">
           <SectionIntro
@@ -122,6 +82,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 03. Para Profesionales y Residencial */}
+      <section className="audiences section-shell" id="profesionales">
+        <article className="audience-block">
+          <div className="audience-number">{t.audiences.prof.number}</div>
+          <p className="micro-label">{t.audiences.prof.label}</p>
+          <h2>{t.audiences.prof.titleLine1}<br />{t.audiences.prof.titleLine2}</h2>
+          <p>{t.audiences.prof.copy}</p>
+          <ul>
+            {t.audiences.prof.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <ArrowLink href="#contacto">{t.audiences.prof.cta}</ArrowLink>
+        </article>
+        <article className="audience-block audience-secondary" id="residencial">
+          <div className="audience-number">{t.audiences.res.number}</div>
+          <p className="micro-label">{t.audiences.res.label}</p>
+          <h2>{t.audiences.res.titleLine1}<br />{t.audiences.res.titleLine2}</h2>
+          <p>{t.audiences.res.copy}</p>
+          <ul>
+            {t.audiences.res.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <ArrowLink href="#contacto">{t.audiences.res.cta}</ArrowLink>
+        </article>
+      </section>
+
+      {/* 04. Inspiración: Light + Material */}
       <section className="material-section" id="material">
         <div className="material-media">
           <Image src="/images/light-material.jpg" alt="Light + Material" fill sizes="100vw" className="cover-image" />
@@ -139,6 +128,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 05. Green Ray: Manifiesto & Custom Made */}
+      <section className="manifesto section-shell" id="green-ray">
+        <div className="manifesto-grid">
+          <SectionIntro
+            number={t.manifesto.number}
+            label={t.manifesto.label}
+            title={<>{t.manifesto.titleLine1}<br />{t.manifesto.titleLine2}</>}
+          />
+          <div className="manifesto-copy">
+            <p className="lead">{t.manifesto.lead}</p>
+            <p>{t.manifesto.copy}</p>
+            <ArrowLink href="#profesionales">{t.manifesto.cta}</ArrowLink>
+          </div>
+        </div>
+      </section>
+
       <section className="custom-made section-shell">
         <div className="custom-aside"><span>{t.customMade.number}</span><span>{t.customMade.label}</span></div>
         <div className="custom-main">
@@ -149,6 +154,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 06. Contacto */}
       <section className="final-cta" id="contacto">
         <div className="section-shell final-cta-inner">
           <p className="micro-label">{t.finalCta.label}</p>
@@ -179,4 +185,5 @@ export default function Home() {
     </main>
   );
 }
+
 

@@ -18,9 +18,9 @@ export default function Hero() {
           <ArrowLink href="#residencial" inverted>{t.hero.ctaResidential}</ArrowLink>
         </div>
         <div className="hero-index">
-          <div><small>01</small><strong>Projects</strong></div>
-          <div><small>02</small><strong>High End</strong></div>
-          <div><small>03</small><strong>Garden Line</strong></div>
+          <div><small>01</small><strong>Products</strong></div>
+          <div><small>02</small><strong>Projects</strong></div>
+          <div><small>03</small><strong>Professionals</strong></div>
         </div>
       </div>
 

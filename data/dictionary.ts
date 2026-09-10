@@ -136,7 +136,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       projectCategory: "Retail / High End",
     },
     manifesto: {
-      number: "01",
+      number: "05",
       label: "Our point of view",
       titleLine1: "La luz no sólo ilumina.",
       titleLine2: "Construye la forma en que vivimos un espacio.",
@@ -146,7 +146,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     audiences: {
       prof: {
-        number: "01",
+        number: "03",
         label: "Para profesionales & empresas",
         titleLine1: "Your architecture.",
         titleLine2: "Our light.",
@@ -155,7 +155,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
         cta: "Desarrollar un proyecto",
       },
       res: {
-        number: "02",
+        number: "03",
         label: "Para tu casa",
         titleLine1: "La luz correcta",
         titleLine2: "cambia cómo vivís.",
@@ -165,7 +165,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       },
     },
     collections: {
-      number: "02",
+      number: "01",
       label: "Collections",
       titleLine1: "Una solución para cada forma",
       titleLine2: "de habitar la luz.",
@@ -195,7 +195,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     projects: {
-      number: "03",
+      number: "02",
       label: "Selected projects",
       titleLine1: "La luz se entiende mejor",
       titleLine2: "cuando sucede.",
@@ -204,14 +204,14 @@ export const dictionary: Record<Language, TranslationKeys> = {
       viewProject: "View project ↗",
     },
     material: {
-      label: "Light + Material",
+      label: "04 · Light + Material",
       titleLine1: "Light reveals.",
       titleLine2: "Material responds.",
       copy: "La luz cambia según la superficie que encuentra. Diseñamos esa interacción para que cada material conserve su carácter y gane profundidad.",
       list: ["Wood", "Stone", "Metal", "Concrete", "Textile", "Vegetation"],
     },
     customMade: {
-      number: "04",
+      number: "05",
       label: "Custom Made",
       titleLine1: "Algunos proyectos necesitan",
       titleLine2: "una solución que todavía no existe.",
@@ -219,6 +219,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       claim: "Designed around your project.",
       cta: "Desarrollar una solución",
     },
+
     finalCta: {
       label: "Every project starts with a conversation.",
       titleLine1: "What should light do",
@@ -264,7 +265,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       projectCategory: "Retail / High End",
     },
     manifesto: {
-      number: "01",
+      number: "05",
       label: "Our point of view",
       titleLine1: "Light does not merely illuminate.",
       titleLine2: "It shapes the way we experience space.",
@@ -274,7 +275,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     audiences: {
       prof: {
-        number: "01",
+        number: "03",
         label: "For professionals & companies",
         titleLine1: "Your architecture.",
         titleLine2: "Our light.",
@@ -283,7 +284,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
         cta: "Develop a project",
       },
       res: {
-        number: "02",
+        number: "03",
         label: "For your home",
         titleLine1: "The right light",
         titleLine2: "changes how you live.",
@@ -293,7 +294,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       },
     },
     collections: {
-      number: "02",
+      number: "01",
       label: "Collections",
       titleLine1: "A solution for every way",
       titleLine2: "of inhabiting light.",
@@ -323,7 +324,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     projects: {
-      number: "03",
+      number: "02",
       label: "Selected projects",
       titleLine1: "Light is best understood",
       titleLine2: "when it happens.",
@@ -332,14 +333,14 @@ export const dictionary: Record<Language, TranslationKeys> = {
       viewProject: "View project ↗",
     },
     material: {
-      label: "Light + Material",
+      label: "04 · Light + Material",
       titleLine1: "Light reveals.",
       titleLine2: "Material responds.",
       copy: "Light adapts to the surface it encounters. We design this interaction so that each material keeps its character while gaining depth.",
       list: ["Wood", "Stone", "Metal", "Concrete", "Textile", "Vegetation"],
     },
     customMade: {
-      number: "04",
+      number: "05",
       label: "Custom Made",
       titleLine1: "Some projects require",
       titleLine2: "a solution that does not exist yet.",
@@ -347,6 +348,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       claim: "Designed around your project.",
       cta: "Develop a bespoke solution",
     },
+
     finalCta: {
       label: "Every project starts with a conversation.",
       titleLine1: "What should light do",
