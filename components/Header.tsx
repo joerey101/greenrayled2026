@@ -42,7 +42,6 @@ export default function Header() {
             type="button"
             className={language === "es" ? "active" : ""}
             onClick={() => setLanguage("es")}
-            style={{ background: "none", border: "none", font: "inherit", cursor: "pointer", padding: 0 }}
           >
             ES
           </button>
@@ -50,7 +49,6 @@ export default function Header() {
             type="button"
             className={language === "en" ? "active" : ""}
             onClick={() => setLanguage("en")}
-            style={{ background: "none", border: "none", font: "inherit", cursor: "pointer", padding: 0 }}
           >
             EN
           </button>
@@ -71,15 +69,38 @@ export default function Header() {
         <nav aria-label="Mobile navigation">
           {navItems.map(([label, href], index) => (
             <Link key={label} href={href} onClick={() => setOpen(false)}>
-              <small>0{index + 1}</small>{label}
+              <small>0{index + 1}</small>
+              <span>{label}</span>
             </Link>
           ))}
           <Link href="#contacto" onClick={() => setOpen(false)}>
-            <small>06</small>{t.nav.contact}
+            <small>06</small>
+            <span>{t.nav.contact}</span>
           </Link>
         </nav>
+        <div className="mobile-menu-footer">
+          <div className="mobile-lang-switch">
+            <button
+              type="button"
+              className={language === "es" ? "active" : ""}
+              onClick={() => setLanguage("es")}
+            >
+              ES
+            </button>
+            <span>/</span>
+            <button
+              type="button"
+              className={language === "en" ? "active" : ""}
+              onClick={() => setLanguage("en")}
+            >
+              EN
+            </button>
+          </div>
+          <a href="mailto:info@greenrayled.com" className="mobile-menu-email">info@greenrayled.com</a>
+        </div>
       </div>
     </header>
   );
 }
+
 
