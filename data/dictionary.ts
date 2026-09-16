@@ -20,6 +20,57 @@ export type TranslationKeys = {
     ctaResidential: string;
     viewProject: string;
     projectCategory: string;
+    cta: string;
+  };
+  perception: {
+    label: string;
+    titleLine1: string;
+    titleLine2: string;
+    quote: string;
+    concepts: Array<{ verb: string; copy: string }>;
+  };
+  tech: {
+    label: string;
+    titleLine1: string;
+    titleLine2: string;
+    intro: string;
+    specs: Array<{ icon: string; title: string; copy: string }>;
+    railLabel: string;
+    railTitle: string;
+    railCopy: string;
+    railClaim: string;
+  };
+  beam: {
+    label: string;
+    titleLine1: string;
+    titleLine2: string;
+    photometryLabel: string;
+  };
+  commercial: {
+    label: string;
+    titleLine1: string;
+    titleLine2: string;
+    intro: string;
+    verticals: Array<{ name: string; copy: string }>;
+    projects: Array<{ name: string; location: string; tag: string; imageHint: string }>;
+    validation: string;
+    cta: string;
+  };
+  arch: {
+    label: string;
+    titleLine1: string;
+    titleLine2: string;
+    copy: string;
+    methods: string[];
+    claim: string;
+  };
+  mini: {
+    label: string;
+    titleLine1: string;
+    titleLine2: string;
+    copy: string;
+    claim: string;
+    stats: Array<{ value: string; label: string }>;
   };
   manifesto: {
     number: string;
@@ -126,18 +177,100 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     hero: {
       eyebrow: "Light designed to be experienced.",
-      titleLine1: "Diseñamos la luz.",
-      titleLine2: "Transformamos la experiencia.",
-      description:
-        "Iluminación para proyectos, marcas y espacios que hacés propios. Desde arquitectura, retail y hospitality hasta residencias, jardines y terrazas.",
+      titleLine1: "LIGHT, DESIGNED",
+      titleLine2: "TO BE FELT.",
+      description: "Diseñamos la luz. Transformamos la experiencia.",
       ctaProfessional: "Soy profesional / empresa",
       ctaResidential: "Quiero iluminar mi espacio",
       viewProject: "Ver proyecto",
       projectCategory: "Retail / High End",
+      cta: "Explore Green Ray",
+    },
+    perception: {
+      label: "02 · Perception of Light",
+      titleLine1: "La luz no es solo iluminación.",
+      titleLine2: "Es arquitectura invisible.",
+      quote: "La luz revela lo que existe. El ojo recibe lo que la luz decide mostrar.",
+      concepts: [
+        { verb: "Revela", copy: "Saca a la superficie la textura, el relieve y el carácter de cada material." },
+        { verb: "Recorta", copy: "Define bordes. Separa el objeto del fondo. Crea presencia donde antes no había nada." },
+        { verb: "Profundiza", copy: "Genera distancia dentro del mismo espacio. El volumen aparece donde antes había planitud." },
+        { verb: "Dirige", copy: "La mirada sigue la luz. Sin palabras, sin señales. La jerarquía visual la construye el haz." },
+        { verb: "Modifica", copy: "Un mismo espacio con diferente luz es un espacio diferente. La percepción cambia completamente." },
+        { verb: "Crea atmósfera", copy: "La temperatura del color, la intensidad y la dirección generan estados emocionales concretos." },
+      ],
+    },
+    tech: {
+      label: "04 · Lighting Technology",
+      titleLine1: "Detrás del diseño,",
+      titleLine2: "existe ingeniería.",
+      intro: "No ocultamos la parte técnica. La convertimos en contenido visual.",
+      specs: [
+        { icon: "optic", title: "Óptica de precisión", copy: "Lentes intercambiables con aperturas controladas desde 8° hasta 60°. Cada óptica define un comportamiento lumínico específico." },
+        { icon: "beam", title: "Control del haz", copy: "La apertura determina la concentración, el diámetro y la intensidad percibida. No todos los spots son iguales." },
+        { icon: "temp", title: "Temperatura de color", copy: "De 2700K a 6500K. Cada espacio requiere una temperatura distinta para revelar correctamente sus materiales." },
+        { icon: "rail", title: "Sistemas de riel", copy: "Ultradelgados, magnéticos o de inducción. Flexibilidad total en la instalación con presencia física mínima." },
+      ],
+      railLabel: "Rail Systems",
+      railTitle: "Joyería arquitectónica.",
+      railCopy: "Los sistemas de riel de nueva generación permiten reconfigurar la iluminación de un espacio sin obra. Ultradelgados, elegantes, con conexión magnética.",
+      railClaim: "Technology as precision. Architecture as canvas.",
+    },
+    beam: {
+      label: "05 · Beam Control",
+      titleLine1: "Un mismo spot.",
+      titleLine2: "Tres comportamientos completamente distintos.",
+      photometryLabel: "Curva fotométrica",
+    },
+    commercial: {
+      label: "07 · Retail / Hospitality / Commercial",
+      titleLine1: "La luz tiene una función",
+      titleLine2: "concreta sobre el negocio.",
+      intro: "Green Ray no trabaja solamente arquitectura residencial o jardines. Trabaja espacios donde la luz impacta directamente sobre la experiencia de compra, el producto y la percepción de marca.",
+      verticals: [
+        { name: "Retail", copy: "Iluminación de producto, vitrinas y recorrido. La luz guía la atención hacia lo que debe venderse." },
+        { name: "Gastronomía", copy: "Ambiente, materialidad y temperatura. La iluminación transforma la experiencia de cada mesa." },
+        { name: "Hotelería", copy: "Desde el lobby hasta las habitaciones. Luz que construye la identidad de la marca." },
+        { name: "Corporativo", copy: "Espacios de trabajo, salas de reunión y áreas de representación. Calidad de luz que impacta en la productividad." },
+      ],
+      projects: [
+        { name: "Charo", location: "Buenos Aires · Argentina", tag: "Gastronomía / Hospitality", imageHint: "Ambiente Charo — profundidad, calidez, contraste" },
+        { name: "McDonald's", location: "Argentina", tag: "Global Brand / Commercial", imageHint: "Espacio McDonald's — estándar internacional, iluminación comercial" },
+        { name: "Viasono", location: "Buenos Aires · Argentina", tag: "Retail / High End", imageHint: "Viasono — producto, materialidad, luz controlada" },
+      ],
+      validation: "Green Ray trabaja con marcas globales aplicando estándares internacionales de iluminación.",
+      cta: "Desarrollar un proyecto comercial",
+    },
+    arch: {
+      label: "08 · Architectural Integration",
+      titleLine1: "La luminaria desaparece.",
+      titleLine2: "La arquitectura permanece.",
+      copy: "La integración completa de la luminaria dentro de la arquitectura es uno de los valores fundamentales de Green Ray. No se trata de poner focos. Se trata de construir luz desde adentro.",
+      methods: [
+        "Embutida en cielorraso",
+        "Enrasada",
+        "Sobre riel",
+        "Integrada en yeso",
+        "Montaje superficial",
+        "Sistema magnético",
+      ],
+      claim: "The fixture disappears. The architecture remains.",
+    },
+    mini: {
+      label: "10 · Miniaturization",
+      titleLine1: "Máxima capacidad lumínica.",
+      titleLine2: "Mínima presencia física.",
+      copy: "Las luminarias de nueva generación alcanzan potencias y calidades de luz extraordinarias en formatos extremadamente reducidos. El tamaño deja de ser una limitación. La precisión se convierte en argumento de diseño.",
+      claim: "Small by design. Powerful by engineering.",
+      stats: [
+        { value: "< 28mm", label: "Diámetro de apertura" },
+        { value: "95+", label: "CRI — Índice de reproducción cromática" },
+        { value: "8°", label: "Apertura mínima disponible" },
+      ],
     },
     manifesto: {
-      number: "05",
-      label: "Our point of view",
+      number: "13",
+      label: "Green Ray Philosophy",
       titleLine1: "La luz no sólo ilumina.",
       titleLine2: "Construye la forma en que vivimos un espacio.",
       lead: "Revela materiales. Define volúmenes. Crea profundidad. Dirige la mirada. Construye intimidad.",
@@ -146,7 +279,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     audiences: {
       prof: {
-        number: "03",
+        number: "12",
         label: "Para profesionales & empresas",
         titleLine1: "Your architecture.",
         titleLine2: "Our light.",
@@ -155,7 +288,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
         cta: "Desarrollar un proyecto",
       },
       res: {
-        number: "03",
+        number: "12",
         label: "Para tu casa",
         titleLine1: "La luz correcta",
         titleLine2: "cambia cómo vivís.",
@@ -165,7 +298,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       },
     },
     collections: {
-      number: "01",
+      number: "03",
       label: "Collections",
       titleLine1: "Una solución para cada forma",
       titleLine2: "de habitar la luz.",
@@ -195,7 +328,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     projects: {
-      number: "02",
+      number: "06",
       label: "Selected projects",
       titleLine1: "La luz se entiende mejor",
       titleLine2: "cuando sucede.",
@@ -204,14 +337,14 @@ export const dictionary: Record<Language, TranslationKeys> = {
       viewProject: "View project ↗",
     },
     material: {
-      label: "04 · Light + Material",
+      label: "09 · Light + Material",
       titleLine1: "Light reveals.",
       titleLine2: "Material responds.",
       copy: "La luz cambia según la superficie que encuentra. Diseñamos esa interacción para que cada material conserve su carácter y gane profundidad.",
-      list: ["Wood", "Stone", "Metal", "Concrete", "Textile", "Vegetation"],
+      list: ["Wood", "Stone", "Metal", "Concrete", "Textile", "Glass", "Vegetation"],
     },
     customMade: {
-      number: "05",
+      number: "11",
       label: "Custom Made",
       titleLine1: "Algunos proyectos necesitan",
       titleLine2: "una solución que todavía no existe.",
@@ -219,7 +352,6 @@ export const dictionary: Record<Language, TranslationKeys> = {
       claim: "Designed around your project.",
       cta: "Desarrollar una solución",
     },
-
     finalCta: {
       label: "Every project starts with a conversation.",
       titleLine1: "What should light do",
@@ -255,18 +387,100 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     hero: {
       eyebrow: "Light designed to be experienced.",
-      titleLine1: "We design light.",
-      titleLine2: "We transform the experience.",
-      description:
-        "Lighting for projects, brands, and spaces you make your own. From architecture, retail, and hospitality to residences, gardens, and terraces.",
+      titleLine1: "LIGHT, DESIGNED",
+      titleLine2: "TO BE FELT.",
+      description: "We design light. We transform the experience.",
       ctaProfessional: "I'm a professional / company",
       ctaResidential: "I want to illuminate my space",
       viewProject: "View project",
       projectCategory: "Retail / High End",
+      cta: "Explore Green Ray",
+    },
+    perception: {
+      label: "02 · Perception of Light",
+      titleLine1: "Light is not just illumination.",
+      titleLine2: "It is invisible architecture.",
+      quote: "Light reveals what exists. The eye receives what light decides to show.",
+      concepts: [
+        { verb: "Reveals", copy: "Brings texture, relief, and the character of each material to the surface." },
+        { verb: "Cuts", copy: "Defines edges. Separates object from background. Creates presence where there was nothing." },
+        { verb: "Deepens", copy: "Creates distance within the same space. Volume appears where flatness once existed." },
+        { verb: "Directs", copy: "The gaze follows light. Without words, without signals. The beam builds visual hierarchy." },
+        { verb: "Transforms", copy: "The same space with different light is a different space. Perception changes completely." },
+        { verb: "Creates mood", copy: "Color temperature, intensity, and direction generate concrete emotional states." },
+      ],
+    },
+    tech: {
+      label: "04 · Lighting Technology",
+      titleLine1: "Behind the design,",
+      titleLine2: "there is engineering.",
+      intro: "We don't hide the technical side. We turn it into visual content.",
+      specs: [
+        { icon: "optic", title: "Precision optics", copy: "Interchangeable lenses with controlled apertures from 8° to 60°. Each optic defines a specific light behavior." },
+        { icon: "beam", title: "Beam control", copy: "Aperture determines concentration, diameter, and perceived intensity. Not all spots are the same." },
+        { icon: "temp", title: "Color temperature", copy: "From 2700K to 6500K. Each space requires a different temperature to correctly reveal its materials." },
+        { icon: "rail", title: "Rail systems", copy: "Ultra-thin, magnetic, or inductive. Full installation flexibility with minimal physical presence." },
+      ],
+      railLabel: "Rail Systems",
+      railTitle: "Architectural jewelry.",
+      railCopy: "Next-generation rail systems allow spaces to be reconfigured without construction. Ultra-thin, elegant, with magnetic connection.",
+      railClaim: "Technology as precision. Architecture as canvas.",
+    },
+    beam: {
+      label: "05 · Beam Control",
+      titleLine1: "One fixture.",
+      titleLine2: "Three completely different behaviors.",
+      photometryLabel: "Photometric curve",
+    },
+    commercial: {
+      label: "07 · Retail / Hospitality / Commercial",
+      titleLine1: "Light has a concrete function",
+      titleLine2: "within the business.",
+      intro: "Green Ray doesn't only work residential architecture or gardens. We work spaces where light directly impacts the shopping experience, the product, and brand perception.",
+      verticals: [
+        { name: "Retail", copy: "Product, display, and circulation lighting. Light guides attention to what needs to be sold." },
+        { name: "Gastronomy", copy: "Mood, materiality, and temperature. Lighting transforms the experience at every table." },
+        { name: "Hospitality", copy: "From lobby to rooms. Light that builds brand identity." },
+        { name: "Corporate", copy: "Workspaces, meeting rooms, and representation areas. Light quality that impacts productivity." },
+      ],
+      projects: [
+        { name: "Charo", location: "Buenos Aires · Argentina", tag: "Gastronomy / Hospitality", imageHint: "Charo atmosphere — depth, warmth, contrast" },
+        { name: "McDonald's", location: "Argentina", tag: "Global Brand / Commercial", imageHint: "McDonald's space — international standards, commercial lighting" },
+        { name: "Viasono", location: "Buenos Aires · Argentina", tag: "Retail / High End", imageHint: "Viasono — product, materiality, controlled light" },
+      ],
+      validation: "Green Ray works with global brands applying international lighting standards.",
+      cta: "Develop a commercial project",
+    },
+    arch: {
+      label: "08 · Architectural Integration",
+      titleLine1: "The fixture disappears.",
+      titleLine2: "The architecture remains.",
+      copy: "The complete integration of the fixture within architecture is one of Green Ray's fundamental values. It's not about installing spotlights. It's about building light from within.",
+      methods: [
+        "Recessed in ceiling",
+        "Flush-mounted",
+        "On rail",
+        "Integrated in plaster",
+        "Surface-mounted",
+        "Magnetic system",
+      ],
+      claim: "The fixture disappears. The architecture remains.",
+    },
+    mini: {
+      label: "10 · Miniaturization",
+      titleLine1: "Maximum light output.",
+      titleLine2: "Minimum physical presence.",
+      copy: "Next-generation fixtures achieve extraordinary light power and quality in extremely reduced formats. Size is no longer a limitation. Precision becomes a design argument.",
+      claim: "Small by design. Powerful by engineering.",
+      stats: [
+        { value: "< 28mm", label: "Opening diameter" },
+        { value: "95+", label: "CRI — Color rendering index" },
+        { value: "8°", label: "Minimum available aperture" },
+      ],
     },
     manifesto: {
-      number: "05",
-      label: "Our point of view",
+      number: "13",
+      label: "Green Ray Philosophy",
       titleLine1: "Light does not merely illuminate.",
       titleLine2: "It shapes the way we experience space.",
       lead: "It reveals materials. Defines volumes. Creates depth. Directs focus. Builds intimacy.",
@@ -275,7 +489,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     audiences: {
       prof: {
-        number: "03",
+        number: "12",
         label: "For professionals & companies",
         titleLine1: "Your architecture.",
         titleLine2: "Our light.",
@@ -284,7 +498,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
         cta: "Develop a project",
       },
       res: {
-        number: "03",
+        number: "12",
         label: "For your home",
         titleLine1: "The right light",
         titleLine2: "changes how you live.",
@@ -294,7 +508,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       },
     },
     collections: {
-      number: "01",
+      number: "03",
       label: "Collections",
       titleLine1: "A solution for every way",
       titleLine2: "of inhabiting light.",
@@ -324,7 +538,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     projects: {
-      number: "02",
+      number: "06",
       label: "Selected projects",
       titleLine1: "Light is best understood",
       titleLine2: "when it happens.",
@@ -333,14 +547,14 @@ export const dictionary: Record<Language, TranslationKeys> = {
       viewProject: "View project ↗",
     },
     material: {
-      label: "04 · Light + Material",
+      label: "09 · Light + Material",
       titleLine1: "Light reveals.",
       titleLine2: "Material responds.",
       copy: "Light adapts to the surface it encounters. We design this interaction so that each material keeps its character while gaining depth.",
-      list: ["Wood", "Stone", "Metal", "Concrete", "Textile", "Vegetation"],
+      list: ["Wood", "Stone", "Metal", "Concrete", "Textile", "Glass", "Vegetation"],
     },
     customMade: {
-      number: "05",
+      number: "11",
       label: "Custom Made",
       titleLine1: "Some projects require",
       titleLine2: "a solution that does not exist yet.",
@@ -348,7 +562,6 @@ export const dictionary: Record<Language, TranslationKeys> = {
       claim: "Designed around your project.",
       cta: "Develop a bespoke solution",
     },
-
     finalCta: {
       label: "Every project starts with a conversation.",
       titleLine1: "What should light do",
@@ -372,4 +585,3 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
   },
 };
-

@@ -6,6 +6,12 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ArrowLink from "@/components/ArrowLink";
 import SectionIntro from "@/components/SectionIntro";
+import PerceptionSection from "@/components/PerceptionSection";
+import TechSection from "@/components/TechSection";
+import BeamControl from "@/components/BeamControl";
+import CommercialSection from "@/components/CommercialSection";
+import ArchitecturalIntegration from "@/components/ArchitecturalIntegration";
+import Miniaturization from "@/components/Miniaturization";
 import { featuredProjects } from "@/data/projects";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -21,9 +27,14 @@ export default function Home() {
   return (
     <main>
       <Header />
+
+      {/* 01 — Hero / Desire */}
       <Hero />
 
-      {/* 01. Productos / Colecciones */}
+      {/* 02 — Perception of Light */}
+      <PerceptionSection />
+
+      {/* 03 — High End / Garden Line / Architectural */}
       <section className="lines-section" id="lineas">
         <div className="section-shell">
           <SectionIntro
@@ -56,7 +67,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 02. Proyectos Destacados */}
+      {/* 04 — Lighting Technology */}
+      <TechSection />
+
+      {/* 05 — Beam Control */}
+      <BeamControl />
+
+      {/* 06 — Selected Projects */}
       <section className="projects section-shell" id="proyectos">
         <div className="projects-head">
           <SectionIntro
@@ -79,10 +96,64 @@ export default function Home() {
               </div>
             </Link>
           ))}
+          {/* Placeholder cards for upcoming projects */}
+          <div className="project-card project-card-placeholder">
+            <div className="project-image project-image--placeholder">
+              <div className="perception-img-placeholder" aria-label="Upcoming project">
+                <div className="perception-img-placeholder-inner">
+                  <span className="placeholder-label">PRÓXIMAMENTE</span>
+                  <span className="placeholder-desc">Charo — Buenos Aires</span>
+                  <span className="placeholder-size">(1600 × 1200 px · landscape · ambiente cálido)</span>
+                </div>
+              </div>
+            </div>
+            <div className="project-meta">
+              <div><strong>Charo</strong><span>Buenos Aires · Argentina</span></div>
+              <div><span>Gastronomía / Hospitality</span></div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 03. Para Profesionales y Residencial */}
+      {/* 07 — Retail / Hospitality / Commercial */}
+      <CommercialSection />
+
+      {/* 08 — Architectural Integration */}
+      <ArchitecturalIntegration />
+
+      {/* 09 — Light + Material */}
+      <section className="material-section" id="material">
+        <div className="material-media">
+          <Image src="/images/light-material.jpg" alt="Light + Material" fill sizes="100vw" className="cover-image" />
+          <div className="material-overlay" />
+        </div>
+        <div className="material-content section-shell">
+          <p className="micro-label">{t.material.label}</p>
+          <h2>{t.material.titleLine1}<br />{t.material.titleLine2}</h2>
+          <p>{t.material.copy}</p>
+          <div className="materials-list">
+            {t.material.list.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 10 — Miniaturization */}
+      <Miniaturization />
+
+      {/* 11 — Custom Made */}
+      <section className="custom-made section-shell">
+        <div className="custom-aside"><span>{t.customMade.number}</span><span>{t.customMade.label}</span></div>
+        <div className="custom-main">
+          <h2>{t.customMade.titleLine1}<br />{t.customMade.titleLine2}</h2>
+          <p>{t.customMade.copy}</p>
+          <p className="custom-claim">{t.customMade.claim}</p>
+          <ArrowLink href="#contacto">{t.customMade.cta}</ArrowLink>
+        </div>
+      </section>
+
+      {/* 12 — Professionals */}
       <section className="audiences section-shell" id="profesionales">
         <article className="audience-block">
           <div className="audience-number">{t.audiences.prof.number}</div>
@@ -110,25 +181,7 @@ export default function Home() {
         </article>
       </section>
 
-      {/* 04. Inspiración: Light + Material */}
-      <section className="material-section" id="material">
-        <div className="material-media">
-          <Image src="/images/light-material.jpg" alt="Light + Material" fill sizes="100vw" className="cover-image" />
-          <div className="material-overlay" />
-        </div>
-        <div className="material-content section-shell">
-          <p className="micro-label">{t.material.label}</p>
-          <h2>{t.material.titleLine1}<br />{t.material.titleLine2}</h2>
-          <p>{t.material.copy}</p>
-          <div className="materials-list">
-            {t.material.list.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 05. Green Ray: Manifiesto & Custom Made */}
+      {/* 13 — Green Ray Philosophy */}
       <section className="manifesto section-shell" id="green-ray">
         <div className="manifesto-grid">
           <SectionIntro
@@ -144,17 +197,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="custom-made section-shell">
-        <div className="custom-aside"><span>{t.customMade.number}</span><span>{t.customMade.label}</span></div>
-        <div className="custom-main">
-          <h2>{t.customMade.titleLine1}<br />{t.customMade.titleLine2}</h2>
-          <p>{t.customMade.copy}</p>
-          <p className="custom-claim">{t.customMade.claim}</p>
-          <ArrowLink href="#contacto">{t.customMade.cta}</ArrowLink>
-        </div>
-      </section>
-
-      {/* 06. Contacto */}
+      {/* 14 — Contact / Start a Project */}
       <section className="final-cta" id="contacto">
         <div className="section-shell final-cta-inner">
           <p className="micro-label">{t.finalCta.label}</p>
@@ -171,6 +214,8 @@ export default function Home() {
             <a href="#lineas">{t.nav.products}</a>
             <a href="#proyectos">{t.nav.projects}</a>
             <a href="#profesionales">{t.nav.professionals}</a>
+            <a href="#tecnologia">Tecnología</a>
+            <a href="#comercial">Comercial</a>
           </div>
           <div>
             <small>{t.footer.region}</small>
@@ -185,5 +230,3 @@ export default function Home() {
     </main>
   );
 }
-
-

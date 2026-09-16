@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import ArrowLink from "./ArrowLink";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -8,41 +7,50 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="hero" aria-labelledby="hero-title">
-      <div className="hero-copy">
-        <div className="eyebrow"><span />{t.hero.eyebrow}</div>
-        <h1 id="hero-title">{t.hero.titleLine1}<br /><span>{t.hero.titleLine2}</span></h1>
-        <p>{t.hero.description}</p>
-        <div className="hero-cta-row">
-          <ArrowLink href="#profesionales" inverted>{t.hero.ctaProfessional}</ArrowLink>
-          <ArrowLink href="#residencial" inverted>{t.hero.ctaResidential}</ArrowLink>
+    <section className="hero hero--editorial" aria-labelledby="hero-title">
+      {/* Background: full black with image placeholder */}
+      <div className="hero-bg">
+        <div className="hero-bg-placeholder" aria-label="Editorial hero photograph — to be provided">
+          <div className="hero-bg-placeholder-inner">
+            <span className="placeholder-label">FOTOGRAFÍA EDITORIAL</span>
+            <span className="placeholder-desc">
+              Primerísimo primer plano · Luz de alta precisión · Fondo negro absoluto
+            </span>
+            <span className="placeholder-size">(2560 × 1440 px mínimo · formato landscape · fondo negro puro)</span>
+          </div>
         </div>
-        <div className="hero-index">
-          <div><small>01</small><strong>Products</strong></div>
-          <div><small>02</small><strong>Projects</strong></div>
-          <div><small>03</small><strong>Professionals</strong></div>
-        </div>
+        <div className="hero-bg-overlay" />
       </div>
 
-      <div className="hero-media">
-        <Image
-          src="/images/viasono-hero.jpg"
-          alt="Viasono Buenos Aires"
-          fill
-          priority
-          sizes="(max-width: 900px) 100vw, 58vw"
-          className="hero-image"
-        />
-        <div className="hero-media-shade" />
-        <div className="project-stamp">
-          <strong>Viasono</strong>
-          <span>Buenos Aires · Argentina</span>
-          <span>{t.hero.projectCategory}</span>
-          <ArrowLink href="/proyectos/viasono-buenos-aires" inverted>{t.hero.viewProject}</ArrowLink>
+      {/* Content */}
+      <div className="hero-editorial-content section-shell">
+        <div className="hero-editorial-top">
+          <div className="eyebrow">
+            <span />
+            {t.hero.eyebrow}
+          </div>
         </div>
-        <div className="hero-counter">01 / 05</div>
+
+        <div className="hero-editorial-main">
+          <h1 id="hero-title" className="hero-editorial-h1">
+            {t.hero.titleLine1}
+            <br />
+            <span className="hero-editorial-h1-muted">{t.hero.titleLine2}</span>
+          </h1>
+          <p className="hero-editorial-desc">{t.hero.description}</p>
+          <ArrowLink href="#percepcion" inverted className="hero-editorial-cta">
+            {t.hero.cta}
+          </ArrowLink>
+        </div>
+
+        {/* Bottom scroll indicator */}
+        <div className="hero-editorial-bottom">
+          <div className="hero-scroll-indicator">
+            <span className="hero-scroll-line" />
+            <span className="hero-scroll-label">scroll</span>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
-
