@@ -36,7 +36,7 @@ main { overflow: clip; }
 .brand-logo { height: 22px; width: auto; display: block; }
 .desktop-nav { display: flex; justify-content: center; gap: clamp(20px, 3vw, 48px); }
 .desktop-nav a, .header-contact, .language-switch { font-size: 10px; text-transform: uppercase; letter-spacing: .21em; }
-.desktop-nav a { opacity: .78; transition: opacity .25s; }
+.desktop-nav a { opacity: .78; transition: opacity .25s; white-space: nowrap; }
 .desktop-nav a:hover { opacity: 1; }
 .header-actions { display: flex; align-items: center; justify-content: flex-end; gap: 24px; }
 .language-switch { display: flex; gap: 9px; color: #777; align-items: center; }
