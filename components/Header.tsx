@@ -17,7 +17,6 @@ export default function Header() {
 
   const navItems = [
     [t.nav.products, "#lineas"],
-    [t.nav.projects, "#proyectos"],
     [t.nav.professionals, "#profesionales"],
     [t.nav.inspiration, "#material"],
     [t.nav.greenRay, "#green-ray"],
@@ -25,9 +24,15 @@ export default function Header() {
 
   return (
     <header className="site-header">
-      <Link href="/" className="brand" aria-label="Green Ray">
-        <span className="brand-name">GREEN RAY</span>
-        <span className="brand-dot" aria-hidden="true" />
+      <Link href="/" className="brand" aria-label="Green Ray LED">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/greenled-white.svg"
+          alt="Green Ray LED"
+          className="brand-logo"
+          width={183}
+          height={22}
+        />
       </Link>
 
       <nav className="desktop-nav" aria-label={t.nav.products}>

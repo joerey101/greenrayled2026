@@ -229,7 +229,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     commercial: {
-      label: "07 · Retail / Hospitality / Commercial",
+      label: "06 · Retail / Hospitality / Commercial",
       titleLine1: "La luz tiene una función",
       titleLine2: "concreta sobre el negocio.",
       intro: "Green Ray no trabaja solamente arquitectura residencial o jardines. Trabaja espacios donde la luz impacta directamente sobre la experiencia de compra, el producto y la percepción de marca.",
@@ -248,7 +248,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       cta: "Desarrollar un proyecto comercial",
     },
     arch: {
-      label: "08 · Architectural Integration",
+      label: "07 · Architectural Integration",
       titleLine1: "La luminaria desaparece.",
       titleLine2: "La arquitectura permanece.",
       copy: "La integración completa de la luminaria dentro de la arquitectura es uno de los valores fundamentales de Green Ray. No se trata de poner focos. Se trata de construir luz desde adentro.",
@@ -263,7 +263,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       claim: "The fixture disappears. The architecture remains.",
     },
     mini: {
-      label: "10 · Miniaturization",
+      label: "09 · Miniaturization",
       titleLine1: "Máxima capacidad lumínica.",
       titleLine2: "Mínima presencia física.",
       copy: "Las luminarias de nueva generación alcanzan potencias y calidades de luz extraordinarias en formatos extremadamente reducidos. El tamaño deja de ser una limitación. La precisión se convierte en argumento de diseño.",
@@ -275,7 +275,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     manifesto: {
-      number: "13",
+      number: "12",
       label: "Green Ray Philosophy",
       titleLine1: "La luz no sólo ilumina.",
       titleLine2: "Construye la forma en que vivimos un espacio.",
@@ -285,7 +285,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     audiences: {
       prof: {
-        number: "12",
+        number: "11",
         label: "Para profesionales & empresas",
         titleLine1: "Your architecture.",
         titleLine2: "Our light.",
@@ -294,7 +294,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
         cta: "Desarrollar un proyecto",
       },
       res: {
-        number: "12",
+        number: "11",
         label: "Para tu casa",
         titleLine1: "La luz correcta",
         titleLine2: "cambia cómo vivís.",
@@ -343,14 +343,14 @@ export const dictionary: Record<Language, TranslationKeys> = {
       viewProject: "View project ↗",
     },
     material: {
-      label: "09 · Light + Material",
+      label: "08 · Light + Material",
       titleLine1: "Light reveals.",
       titleLine2: "Material responds.",
       copy: "La luz cambia según la superficie que encuentra. Diseñamos esa interacción para que cada material conserve su carácter y gane profundidad.",
       list: ["Wood", "Stone", "Metal", "Concrete", "Textile", "Glass", "Vegetation"],
     },
     customMade: {
-      number: "11",
+      number: "10",
       label: "Custom Made",
       titleLine1: "Algunos proyectos necesitan",
       titleLine2: "una solución que todavía no existe.",
@@ -444,7 +444,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     commercial: {
-      label: "07 · Retail / Hospitality / Commercial",
+      label: "06 · Retail / Hospitality / Commercial",
       titleLine1: "Light has a concrete function",
       titleLine2: "within the business.",
       intro: "Green Ray doesn't only work residential architecture or gardens. We work spaces where light directly impacts the shopping experience, the product, and brand perception.",
@@ -463,7 +463,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       cta: "Develop a commercial project",
     },
     arch: {
-      label: "08 · Architectural Integration",
+      label: "07 · Architectural Integration",
       titleLine1: "The fixture disappears.",
       titleLine2: "The architecture remains.",
       copy: "The complete integration of the fixture within architecture is one of Green Ray's fundamental values. It's not about installing spotlights. It's about building light from within.",
@@ -478,7 +478,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       claim: "The fixture disappears. The architecture remains.",
     },
     mini: {
-      label: "10 · Miniaturization",
+      label: "09 · Miniaturization",
       titleLine1: "Maximum light output.",
       titleLine2: "Minimum physical presence.",
       copy: "Next-generation fixtures achieve extraordinary light power and quality in extremely reduced formats. Size is no longer a limitation. Precision becomes a design argument.",
@@ -490,7 +490,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     manifesto: {
-      number: "13",
+      number: "12",
       label: "Green Ray Philosophy",
       titleLine1: "Light does not merely illuminate.",
       titleLine2: "It shapes the way we experience space.",
@@ -500,7 +500,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     audiences: {
       prof: {
-        number: "12",
+        number: "11",
         label: "For professionals & companies",
         titleLine1: "Your architecture.",
         titleLine2: "Our light.",
@@ -509,7 +509,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
         cta: "Develop a project",
       },
       res: {
-        number: "12",
+        number: "11",
         label: "For your home",
         titleLine1: "The right light",
         titleLine2: "changes how you live.",
@@ -558,14 +558,14 @@ export const dictionary: Record<Language, TranslationKeys> = {
       viewProject: "View project ↗",
     },
     material: {
-      label: "09 · Light + Material",
+      label: "08 · Light + Material",
       titleLine1: "Light reveals.",
       titleLine2: "Material responds.",
       copy: "Light adapts to the surface it encounters. We design this interaction so that each material keeps its character while gaining depth.",
       list: ["Wood", "Stone", "Metal", "Concrete", "Textile", "Glass", "Vegetation"],
     },
     customMade: {
-      number: "11",
+      number: "10",
       label: "Custom Made",
       titleLine1: "Some projects require",
       titleLine2: "a solution that does not exist yet.",

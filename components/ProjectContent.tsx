@@ -21,7 +21,7 @@ export default function ProjectContent({ project }: { project: Project }) {
         <Image src={project.cover} alt={project.title} fill priority sizes="100vw" className="cover-image" />
         <div className="project-hero-overlay" />
         <div className="project-hero-copy section-shell">
-          <Link href="/#proyectos" className="back-link">{t.projectDetail.back}</Link>
+          <Link href="/" className="back-link">{t.projectDetail.back}</Link>
           <p className="micro-label">{project.client} · {project.location}</p>
           <h1>{project.title}</h1>
           <p className="project-statement">{statement}</p>
