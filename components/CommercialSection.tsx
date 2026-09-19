@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import ArrowLink from "./ArrowLink";
 
@@ -41,15 +42,29 @@ export default function CommercialSection() {
         {t.commercial.projects.map((proj, i) => (
           <div className={`commercial-project-card commercial-project-card-${i + 1}`} key={i}>
             {/* Image placeholder */}
-            <div className="commercial-project-img">
-              <div className="perception-img-placeholder" aria-label={`Project image: ${proj.name}`}>
-                <div className="perception-img-placeholder-inner">
-                  <span className="placeholder-label">FOTOGRAFÍA</span>
-                  <span className="placeholder-desc">{proj.imageHint}</span>
-                  {i === 0 && <span className="placeholder-size">(1200 × 1600 px · portrait · card grande)</span>}
-                  {i !== 0 && <span className="placeholder-size">(1200 × 800 px · landscape)</span>}
+            <div
+              className="commercial-project-img"
+              style={i === 0 ? { position: "relative", minHeight: "600px" } : undefined}
+            >
+              {i === 0 ? (
+                <Image
+                  src="/images/charo_light.webp"
+                  alt={proj.name}
+                  fill
+                  quality={90}
+                  sizes="(max-width: 1050px) 100vw, 60vw"
+                  className="cover-image"
+                  style={{ objectFit: "cover" }}
+                />
+              ) : (
+                <div className="perception-img-placeholder" aria-label={`Project image: ${proj.name}`}>
+                  <div className="perception-img-placeholder-inner">
+                    <span className="placeholder-label">FOTOGRAFÍA</span>
+                    <span className="placeholder-desc">{proj.imageHint}</span>
+                    <span className="placeholder-size">(1200 × 800 px · landscape)</span>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
             <div className="commercial-project-meta">
               <strong>{proj.name}</strong>

@@ -77,28 +77,10 @@ export default function Home() {
       {/* 07 — Architectural Integration */}
       <ArchitecturalIntegration />
 
-      {/* 08 — Light + Material */}
-      <section className="material-section" id="material">
-        <div className="material-media">
-          <Image src="/images/light-material.jpg" alt="Light + Material" fill sizes="100vw" className="cover-image" />
-          <div className="material-overlay" />
-        </div>
-        <div className="material-content section-shell">
-          <p className="micro-label">{t.material.label}</p>
-          <h2>{t.material.titleLine1}<br />{t.material.titleLine2}</h2>
-          <p>{t.material.copy}</p>
-          <div className="materials-list">
-            {t.material.list.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 09 — Miniaturization */}
+      {/* 08 — Miniaturization */}
       <Miniaturization />
 
-      {/* 10 — Contact / Start a Project */}
+      {/* 09 — Contact / Start a Project */}
       <section className="final-cta" id="contacto">
         <div className="section-shell final-cta-inner">
           <p className="micro-label">{t.finalCta.label}</p>

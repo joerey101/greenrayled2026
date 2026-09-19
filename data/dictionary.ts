@@ -263,7 +263,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       claim: "The fixture disappears. The architecture remains.",
     },
     mini: {
-      label: "09 · Miniaturization",
+      label: "08 · Miniaturization",
       titleLine1: "Máxima capacidad lumínica.",
       titleLine2: "Mínima presencia física.",
       copy: "Las luminarias de nueva generación alcanzan potencias y calidades de luz extraordinarias en formatos extremadamente reducidos. El tamaño deja de ser una limitación. La precisión se convierte en argumento de diseño.",
@@ -478,7 +478,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       claim: "The fixture disappears. The architecture remains.",
     },
     mini: {
-      label: "09 · Miniaturization",
+      label: "08 · Miniaturization",
       titleLine1: "Maximum light output.",
       titleLine2: "Minimum physical presence.",
       copy: "Next-generation fixtures achieve extraordinary light power and quality in extremely reduced formats. Size is no longer a limitation. Precision becomes a design argument.",
