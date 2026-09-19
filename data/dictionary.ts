@@ -45,6 +45,7 @@ export type TranslationKeys = {
     titleLine1: string;
     titleLine2: string;
     photometryLabel: string;
+    sectors: Array<{ name: string; desc: string }>;
   };
   commercial: {
     label: string;
@@ -190,7 +191,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       label: "02 · Perception of Light",
       titleLine1: "La luz no es solo iluminación.",
       titleLine2: "Es arquitectura invisible.",
-      quote: "La luz revela lo que existe. El ojo recibe lo que la luz decide mostrar.",
+      quote: "Light that whispers luxury.",
       concepts: [
         { verb: "Revela", copy: "Saca a la superficie la textura, el relieve y el carácter de cada material." },
         { verb: "Recorta", copy: "Define bordes. Separa el objeto del fondo. Crea presencia donde antes no había nada." },
@@ -218,9 +219,14 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     beam: {
       label: "05 · Beam Control",
-      titleLine1: "Un mismo spot.",
-      titleLine2: "Tres comportamientos completamente distintos.",
+      titleLine1: "Una fuente de luz.",
+      titleLine2: "Infinitas escenas",
       photometryLabel: "Curva fotométrica",
+      sectors: [
+        { name: "Haz estrecho", desc: "Acento preciso" },
+        { name: "Haz medio", desc: "Equilibrio visual" },
+        { name: "Haz abierto", desc: "Cobertura ambiental" },
+      ],
     },
     commercial: {
       label: "07 · Retail / Hospitality / Commercial",
@@ -400,7 +406,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       label: "02 · Perception of Light",
       titleLine1: "Light is not just illumination.",
       titleLine2: "It is invisible architecture.",
-      quote: "Light reveals what exists. The eye receives what light decides to show.",
+      quote: "Light that whispers luxury.",
       concepts: [
         { verb: "Reveals", copy: "Brings texture, relief, and the character of each material to the surface." },
         { verb: "Cuts", copy: "Defines edges. Separates object from background. Creates presence where there was nothing." },
@@ -428,9 +434,14 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     beam: {
       label: "05 · Beam Control",
-      titleLine1: "One fixture.",
-      titleLine2: "Three completely different behaviors.",
+      titleLine1: "One light source.",
+      titleLine2: "Infinite scenes",
       photometryLabel: "Photometric curve",
+      sectors: [
+        { name: "Narrow beam", desc: "Precise accent" },
+        { name: "Medium beam", desc: "Visual balance" },
+        { name: "Wide beam", desc: "Ambient coverage" },
+      ],
     },
     commercial: {
       label: "07 · Retail / Hospitality / Commercial",

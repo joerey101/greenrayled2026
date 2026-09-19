@@ -1,151 +1,174 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
-const BEAMS = [
-  {
-    angle: "8°",
-    label: "Narrow",
-    labelEs: "Estrecho",
-    spread: 18,   // % of container width for the beam cone
-    intensity: 1,
-    description: "Concentración máxima. Haz preciso para acentuar un objeto o superficie con mínima dispersión.",
-    descriptionEn: "Maximum concentration. Precise beam to accentuate an object or surface with minimal scatter.",
-  },
-  {
-    angle: "24°",
-    label: "Medium",
-    labelEs: "Medio",
-    spread: 40,
-    intensity: 0.82,
-    description: "Equilibrio entre concentración y cobertura. Ideal para iluminar zonas de trabajo o mostrar superficies.",
-    descriptionEn: "Balance between concentration and coverage. Ideal for task lighting or showcasing surfaces.",
-  },
-  {
-    angle: "36°",
-    label: "Wide",
-    labelEs: "Amplio",
-    spread: 62,
-    intensity: 0.65,
-    description: "Cobertura generosa. Crea atmósfera difusa y uniforme sobre áreas amplias.",
-    descriptionEn: "Generous coverage. Creates soft, even atmosphere over broad areas.",
-  },
-];
+/* ──────────────────────────────────────────────────────────────────────────
+   Beam Control — módulo de haces de luz interactivos (Green Ray)
+   Escena en penumbra (beam-scene-off.webp). Cada columna enciende su haz de
+   forma independiente: revela el objeto (máscara elíptica sobre la misma
+   escena, más brillante) + cono volumétrico + charco en la base.
+   Geometría por sector en % del contenedor; textos vía diccionario (i18n).
+   ────────────────────────────────────────────────────────────────────────── */
+
+const SCENE = "/images/beam-scene-off.webp";
+const ASPECT = "1672 / 941";
+
+// Geometría de cada haz, en % del contenedor. Origen arriba-izquierda.
+// fx/fy = luminaria · tx/mcy + revW/revH = zona revelada · bx/by + poolW = charco
+const SECTORS = [
+  { deg: "8°",  fx: 26.4, fy: 6, tx: 26.4, mcy: 62, revW: 8,  revH: 26, bx: 26.4, by: 86.8, poolW: 9,  coneW: 4,  coneBot: 68 },
+  { deg: "24°", fx: 52,   fy: 5, tx: 52,   mcy: 65, revW: 14, revH: 30, bx: 52,   by: 86.8, poolW: 15, coneW: 10, coneBot: 76 },
+  { deg: "36°", fx: 80,   fy: 6, tx: 80,   mcy: 64, revW: 19, revH: 34, bx: 80,   by: 86.8, poolW: 21, coneW: 17, coneBot: 74 },
+] as const;
+
+type Sector = (typeof SECTORS)[number];
+
+function revealMask(s: Sector) {
+  return `radial-gradient(ellipse ${s.revW}% ${s.revH}% at ${s.tx}% ${s.mcy}%, #fff 0%, #fff 58%, transparent 80%)`;
+}
+
+function dotGlow(i: number) {
+  const lv = [0.8, 0.85, 0.9][Math.min(i, 2)];
+  return (
+    `0 0 ${12 + i * 3}px ${3 + i}px rgba(var(--bc-warm),${lv}),` +
+    `0 0 ${30 + i * 9}px ${10 + i * 3}px rgba(var(--bc-warm),${lv - 0.5})`
+  );
+}
 
 export default function BeamControl() {
   const { t, language } = useLanguage();
-  const [active, setActive] = useState(1);
-  const beam = BEAMS[active];
+  const [on, setOn] = useState<boolean[]>([false, false, false]);
+  const anyOn = on.some(Boolean);
+
+  const toggle = (i: number) =>
+    setOn((prev) => prev.map((v, k) => (k === i ? !v : v)));
+
+  const sectors = t.beam.sectors;
 
   return (
-    <section className="beam-section" id="beam-control">
+    <section className="beam-section" id="beam-control" aria-labelledby="beam-title">
       <div className="beam-header section-shell">
         <p className="micro-label">{t.beam.label}</p>
-        <h2 className="beam-title">
+        <h2 className="beam-title" id="beam-title">
           {t.beam.titleLine1}
           <br />
           <em>{t.beam.titleLine2}</em>
         </h2>
       </div>
 
-      <div className="beam-stage-wrap section-shell">
-        {/* Visual simulation */}
-        <div className="beam-stage" aria-label={`Beam aperture ${beam.angle}`}>
-          {/* Fixture dot */}
-          <div className="beam-fixture">
-            <div className="beam-fixture-dot" />
-          </div>
+      <div className="section-shell">
+        <div className="bc-root">
+          <div className="bc-stage" style={{ aspectRatio: ASPECT }}>
+            {/* Base: escena en penumbra */}
+            <div
+              className="bc-base"
+              style={{
+                filter: `brightness(${anyOn ? 0.24 : 0.38}) contrast(1.06) saturate(.9)`,
+              }}
+            >
+              <Image
+                src={SCENE}
+                alt="Green Ray — escena de galería en penumbra"
+                fill
+                quality={95}
+                sizes="(max-width: 1050px) 100vw, 1200px"
+                priority
+                style={{ objectFit: "cover" }}
+              />
+            </div>
 
-          {/* Light cone */}
-          <div
-            className="beam-cone"
-            style={{ "--beam-spread": `${beam.spread}%`, "--beam-opacity": beam.intensity } as React.CSSProperties}
-          />
-
-          {/* Pool of light */}
-          <div
-            className="beam-pool"
-            style={{ "--beam-spread": `${beam.spread}%`, "--beam-opacity": beam.intensity } as React.CSSProperties}
-          />
-
-          {/* Angle annotation */}
-          <div className="beam-angle-label">{beam.angle}</div>
-        </div>
-
-        {/* Controls */}
-        <div className="beam-controls">
-          <div className="beam-selector">
-            {BEAMS.map((b, i) => (
-              <button
-                key={b.angle}
-                type="button"
-                className={`beam-btn${active === i ? " is-active" : ""}`}
-                onClick={() => setActive(i)}
-                aria-pressed={active === i}
+            {/* Capas de revelado (una por haz) */}
+            {SECTORS.map((s, i) => (
+              <div
+                key={`rev-${s.deg}`}
+                className="bc-reveal"
+                aria-hidden="true"
+                style={{
+                  opacity: on[i] ? 1 : 0,
+                  maskImage: revealMask(s),
+                  WebkitMaskImage: revealMask(s),
+                }}
               >
-                <span className="beam-btn-angle">{b.angle}</span>
-                <span className="beam-btn-label">{language === "es" ? b.labelEs : b.label}</span>
-              </button>
-            ))}
-          </div>
-
-          <div className="beam-info">
-            <p className="beam-desc">
-              {language === "es" ? beam.description : beam.descriptionEn}
-            </p>
-            <div className="beam-photometry">
-              {/* Schematic photometric curve */}
-              <svg
-                viewBox="0 0 120 80"
-                className="photometry-svg"
-                aria-label={`Photometric curve ${beam.angle}`}
-              >
-                <line x1="60" y1="0" x2="60" y2="80" stroke="rgba(255,255,255,.12)" strokeWidth="1" />
-                <line x1="0" y1="60" x2="120" y2="60" stroke="rgba(255,255,255,.12)" strokeWidth="1" />
-                <path
-                  d={getPhotometryCurve(beam.spread)}
-                  fill="rgba(153,193,61,.15)"
-                  stroke="#99c13d"
-                  strokeWidth="1.5"
-                  style={{ transition: "d 0.5s ease" }}
+                <Image
+                  src={SCENE}
+                  alt=""
+                  fill
+                  quality={95}
+                  sizes="(max-width: 1050px) 100vw, 1200px"
+                  style={{ objectFit: "cover" }}
                 />
-                <text x="60" y="74" textAnchor="middle" fontSize="6" fill="rgba(255,255,255,.4)">
-                  {beam.angle}
-                </text>
-              </svg>
-              <p className="photometry-label">{t.beam.photometryLabel}</p>
+              </div>
+            ))}
+
+            {/* Conos, charcos y luminarias */}
+            <div className="bc-fx" aria-hidden="true">
+              {SECTORS.map((s, i) => (
+                <div key={`fx-${s.deg}`}>
+                  <div
+                    className="bc-cone"
+                    style={{
+                      left: `${s.fx}%`,
+                      top: `${s.fy}%`,
+                      width: `${s.coneW}%`,
+                      height: `${s.coneBot - s.fy}%`,
+                      opacity: on[i] ? 1 : 0,
+                    }}
+                  />
+                  <div
+                    className="bc-pool"
+                    style={{
+                      left: `${s.bx}%`,
+                      top: `${s.by}%`,
+                      width: `${s.poolW}%`,
+                      height: `${s.poolW * 0.3}%`,
+                      opacity: on[i] ? 1 : 0,
+                    }}
+                  />
+                  <div
+                    className="bc-dot"
+                    style={{
+                      left: `${s.fx}%`,
+                      top: `${s.fy}%`,
+                      opacity: on[i] ? 1 : 0,
+                      boxShadow: on[i] ? dotGlow(i) : "none",
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Divisores */}
+            {SECTORS.slice(1).map((_, i) => (
+              <div
+                key={`div-${i}`}
+                className="bc-divider"
+                aria-hidden="true"
+                style={{ left: `${(100 / SECTORS.length) * (i + 1)}%` }}
+              />
+            ))}
+
+            {/* Controles (columnas clickeables) */}
+            <div className="bc-cols">
+              {SECTORS.map((s, i) => (
+                <button
+                  key={`col-${s.deg}`}
+                  type="button"
+                  className="bc-col"
+                  aria-pressed={on[i]}
+                  aria-label={`${language === "es" ? "Encender" : "Toggle"} ${s.deg} — ${sectors[i].name}`}
+                  onClick={() => toggle(i)}
+                >
+                  <span className="bc-deg">{s.deg}</span>
+                  <span className="bc-nm">{sectors[i].name}</span>
+                  <span className="bc-ds">{sectors[i].desc}</span>
+                </button>
+              ))}
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-}
-
-function getPhotometryCurve(spread: number): string {
-  // Generates a simple polar-curve-style shape based on spread amount
-  const s = spread / 100; // normalize 0–1
-  const cx = 60, cy = 60;
-  const r = 45 * s;
-  // Teardrop shape pointing up from center
-  const points: [number, number][] = [];
-  for (let deg = -90; deg <= 90; deg += 5) {
-    const rad = (deg * Math.PI) / 180;
-    // Lambertian-ish falloff: cos^n
-    const cosV = Math.cos(rad);
-    const n = 1 / (s + 0.01); // narrower spread = sharper falloff
-    const intensity = Math.max(0, Math.pow(Math.abs(cosV), n));
-    const rx = cx + r * intensity * Math.sin(rad);
-    const ry = cy - r * intensity * Math.abs(cosV);
-    points.push([rx, ry]);
-  }
-  // Mirror for full curve
-  const left = points.map(([x, y]) => [2 * cx - x, y] as [number, number]);
-  const all = [...left.reverse(), ...points];
-  const d =
-    "M " +
-    all.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" L ") +
-    " Z";
-  return d;
 }
