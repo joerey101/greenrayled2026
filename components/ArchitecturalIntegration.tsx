@@ -31,12 +31,23 @@ export default function ArchitecturalIntegration() {
           <p className="arch-claim">{t.arch.claim}</p>
         </div>
 
-        {/* Right: single full-height image */}
+        {/* Right: two stacked images (split so mobile shows two blocks) */}
         <div className="arch-media">
           <div className="arch-img-main">
             <Image
-              src="/images/122.jpg"
-              alt="Green Ray LED — familia de luminarias de integración arquitectónica"
+              src="/images/122a.jpg"
+              alt="Green Ray LED — familia de luminarias lineales y de riel"
+              fill
+              quality={95}
+              sizes="(max-width: 1050px) 100vw, 50vw"
+              className="arch-img-real"
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
+          </div>
+          <div className="arch-img-main">
+            <Image
+              src="/images/122b.jpg"
+              alt="Green Ray LED — luminarias integradas en cielorraso"
               fill
               quality={95}
               sizes="(max-width: 1050px) 100vw, 50vw"
