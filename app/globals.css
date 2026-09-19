@@ -952,8 +952,9 @@ main { overflow: clip; }
   margin: 0;
 }
 .arch-media {
-  position: relative;
-  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
   min-height: 680px;
 }
 .arch-placeholder { min-height: 0; border: 1px dashed rgba(255,255,255,.1); }
@@ -1070,7 +1071,7 @@ main { overflow: clip; }
   .commercial-project-card-1 { grid-column: span 2; grid-row: auto; }
   .commercial-project-card-1 .commercial-project-img .perception-img-placeholder { min-height: 400px; }
   .arch-inner { grid-template-columns: 1fr; }
-  .arch-media { min-height: 420px; }
+  .arch-media { min-height: 0; grid-template-rows: 300px 300px; }
   .mini-inner { grid-template-columns: 1fr; }
   .mini-media { order: -1; grid-template-columns: 1fr; }
   .mini-placeholder-main { min-height: 380px; grid-row: auto; }
