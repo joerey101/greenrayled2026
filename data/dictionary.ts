@@ -194,7 +194,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       cta: "Explore Green Ray",
     },
     perception: {
-      label: "01 · Perception of Light",
+      label: "Perception of Light",
       titleLine1: "La luz no es solo iluminación.",
       titleLine2: "Es arquitectura invisible.",
       quote: "Light that whispers luxury.",
@@ -208,7 +208,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     tech: {
-      label: "03 · Lighting Technology",
+      label: "Lighting Technology",
       titleLine1: "Detrás del diseño,",
       titleLine2: "existe ingeniería.",
       intro: "No ocultamos la parte técnica. La convertimos en contenido visual.",
@@ -224,7 +224,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       railClaim: "Technology as precision. Architecture as canvas.",
     },
     beam: {
-      label: "04 · Beam Control",
+      label: "Beam Control",
       titleLine1: "Una fuente de luz.",
       titleLine2: "Infinitas escenas",
       photometryLabel: "Curva fotométrica",
@@ -235,7 +235,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     commercial: {
-      label: "05 · Retail / Hospitality / Commercial",
+      label: "Retail / Hospitality / Commercial",
       titleLine1: "La luz tiene una función",
       titleLine2: "concreta sobre el negocio.",
       intro: "Green Ray no trabaja solamente arquitectura residencial o jardines. Trabaja espacios donde la luz impacta directamente sobre la experiencia de compra, el producto y la percepción de marca.",
@@ -254,7 +254,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       cta: "Desarrollar un proyecto comercial",
     },
     arch: {
-      label: "06 · Architectural Integration",
+      label: "Architectural Integration",
       titleLine1: "La luminaria desaparece.",
       titleLine2: "La arquitectura permanece.",
       copy: "La integración completa de la luminaria dentro de la arquitectura es uno de los valores fundamentales de Green Ray. No se trata de poner focos. Se trata de construir luz desde adentro.",
@@ -269,7 +269,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       claim: "The fixture disappears. The architecture remains.",
     },
     mini: {
-      label: "07 · Miniaturization",
+      label: "Miniaturization",
       titleLine1: "Máxima capacidad lumínica.",
       titleLine2: "Mínima presencia física.",
       copy: "Las luminarias de nueva generación alcanzan potencias y calidades de luz extraordinarias en formatos extremadamente reducidos. El tamaño deja de ser una limitación. La precisión se convierte en argumento de diseño.",
@@ -412,7 +412,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       cta: "Explore Green Ray",
     },
     perception: {
-      label: "01 · Perception of Light",
+      label: "Perception of Light",
       titleLine1: "Light is not just illumination.",
       titleLine2: "It is invisible architecture.",
       quote: "Light that whispers luxury.",
@@ -426,7 +426,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     tech: {
-      label: "03 · Lighting Technology",
+      label: "Lighting Technology",
       titleLine1: "Behind the design,",
       titleLine2: "there is engineering.",
       intro: "We don't hide the technical side. We turn it into visual content.",
@@ -442,7 +442,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       railClaim: "Technology as precision. Architecture as canvas.",
     },
     beam: {
-      label: "04 · Beam Control",
+      label: "Beam Control",
       titleLine1: "One light source.",
       titleLine2: "Infinite scenes",
       photometryLabel: "Photometric curve",
@@ -453,7 +453,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     commercial: {
-      label: "05 · Retail / Hospitality / Commercial",
+      label: "Retail / Hospitality / Commercial",
       titleLine1: "Light has a concrete function",
       titleLine2: "within the business.",
       intro: "Green Ray doesn't only work residential architecture or gardens. We work spaces where light directly impacts the shopping experience, the product, and brand perception.",
@@ -472,7 +472,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       cta: "Develop a commercial project",
     },
     arch: {
-      label: "06 · Architectural Integration",
+      label: "Architectural Integration",
       titleLine1: "The fixture disappears.",
       titleLine2: "The architecture remains.",
       copy: "The complete integration of the fixture within architecture is one of Green Ray's fundamental values. It's not about installing spotlights. It's about building light from within.",
@@ -487,7 +487,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       claim: "The fixture disappears. The architecture remains.",
     },
     mini: {
-      label: "07 · Miniaturization",
+      label: "Miniaturization",
       titleLine1: "Maximum light output.",
       titleLine2: "Minimum physical presence.",
       copy: "Next-generation fixtures achieve extraordinary light power and quality in extremely reduced formats. Size is no longer a limitation. Precision becomes a design argument.",

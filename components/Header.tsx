@@ -6,7 +6,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -39,31 +39,12 @@ export default function Header() {
       </Link>
 
       <nav className="desktop-nav" aria-label={t.nav.menu}>
-        {navItems.map(([label, href], index) => (
-          <Link key={href} href={href}>
-            <span className="nav-num">{`0${index + 1}`}</span>
-            <span className="nav-label">{label}</span>
-          </Link>
+        {navItems.map(([label, href]) => (
+          <Link key={href} href={href}>{label}</Link>
         ))}
       </nav>
 
       <div className="header-actions">
-        <div className="language-switch" aria-label="Language switch">
-          <button
-            type="button"
-            className={language === "es" ? "active" : ""}
-            onClick={() => setLanguage("es")}
-          >
-            ES
-          </button>
-          <button
-            type="button"
-            className={language === "en" ? "active" : ""}
-            onClick={() => setLanguage("en")}
-          >
-            EN
-          </button>
-        </div>
         <Link href="#contacto" className="header-contact">{t.nav.contact}</Link>
         <button
           type="button"
@@ -78,35 +59,16 @@ export default function Header() {
 
       <div className={`mobile-menu ${open ? "is-open" : ""}`}>
         <nav aria-label={t.nav.menu}>
-          {navItems.map(([label, href], index) => (
+          {navItems.map(([label, href]) => (
             <Link key={href} href={href} onClick={() => setOpen(false)}>
-              <small>{`0${index + 1}`}</small>
               <span>{label}</span>
             </Link>
           ))}
           <Link href="#contacto" className="mobile-contact-link" onClick={() => setOpen(false)}>
-            <small>→</small>
             <span>{t.nav.contact}</span>
           </Link>
         </nav>
         <div className="mobile-menu-footer">
-          <div className="mobile-lang-switch">
-            <button
-              type="button"
-              className={language === "es" ? "active" : ""}
-              onClick={() => setLanguage("es")}
-            >
-              ES
-            </button>
-            <span>/</span>
-            <button
-              type="button"
-              className={language === "en" ? "active" : ""}
-              onClick={() => setLanguage("en")}
-            >
-              EN
-            </button>
-          </div>
           <a href="mailto:info@greenrayled.com" className="mobile-menu-email">info@greenrayled.com</a>
         </div>
       </div>

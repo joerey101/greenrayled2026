@@ -36,7 +36,6 @@ export default function Home() {
       <section className="lines-section" id="lineas">
         <div className="section-shell">
           <SectionIntro
-            number={t.collections.number}
             label={t.collections.label}
             title={<><span style={{whiteSpace:"nowrap"}}>{t.collections.titleLine1}</span><br />{t.collections.titleLine2}</>}
           />
