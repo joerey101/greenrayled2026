@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Miniaturization() {
@@ -8,23 +9,17 @@ export default function Miniaturization() {
   return (
     <section className="mini-section" id="miniaturizacion">
       <div className="mini-inner section-shell">
-        {/* Left: image placeholders */}
+        {/* Left: image */}
         <div className="mini-media">
-          {/* Main: hand holding a fixture */}
-          <div className="perception-img-placeholder mini-placeholder-main" aria-label="Hand holding miniature fixture">
-            <div className="perception-img-placeholder-inner">
-              <span className="placeholder-label">FOTOGRAFÍA</span>
-              <span className="placeholder-desc">Mano / dedo sosteniendo luminaria miniaturizada — tratada como joya</span>
-              <span className="placeholder-size">(1000 × 1400 px · portrait · fondo negro o muy oscuro)</span>
-            </div>
-          </div>
-          {/* Secondary: installed result */}
-          <div className="perception-img-placeholder mini-placeholder-side" aria-label="Miniature fixture installed">
-            <div className="perception-img-placeholder-inner">
-              <span className="placeholder-label">FOTOGRAFÍA</span>
-              <span className="placeholder-desc">Resultado lumínico — spot instalado + escala real</span>
-              <span className="placeholder-size">(1000 × 800 px · landscape o square)</span>
-            </div>
+          <div className="mini-img">
+            <Image
+              src="/images/minitura.jpg"
+              alt="Green Ray LED — luminaria lineal miniaturizada sostenida en mano"
+              fill
+              quality={95}
+              sizes="(max-width: 1050px) 100vw, 50vw"
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
           </div>
         </div>
 

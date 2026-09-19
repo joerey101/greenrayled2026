@@ -990,11 +990,13 @@ main { overflow: clip; }
   align-items: center;
 }
 .mini-media {
-  display: grid;
-  grid-template-columns: 1fr .55fr;
-  grid-template-rows: auto;
-  gap: 14px;
-  align-items: start;
+  position: relative;
+}
+.mini-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 767 / 745;
+  overflow: hidden;
 }
 .mini-placeholder-main {
   min-height: 540px;
