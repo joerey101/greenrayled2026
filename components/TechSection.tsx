@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 const TechIcon = ({ type }: { type: string }) => {
@@ -76,14 +77,17 @@ export default function TechSection() {
           <p>{t.tech.railCopy}</p>
           <p className="tech-rail-claim">{t.tech.railClaim}</p>
         </div>
-        {/* Placeholder para imagen de sistema de riel */}
+        {/* Imagen: sistema de riel — Joyería arquitectónica */}
         <div className="tech-rail-media">
-          <div className="perception-img-placeholder perception-img-placeholder--dark" aria-label="Rail system photography">
-            <div className="perception-img-placeholder-inner">
-              <span className="placeholder-label">FOTOGRAFÍA</span>
-              <span className="placeholder-desc">Sistema de riel ultradelgado / magnético</span>
-              <span className="placeholder-size">(1600 × 1000 px · landscape · fondo oscuro o neutro)</span>
-            </div>
+          <div className="tech-rail-img-wrap">
+            <Image
+              src="/images/joya.webp"
+              alt="Joyería arquitectónica — sistema de riel ultradelgado · Green Ray LED"
+              fill
+              quality={95}
+              className="tech-rail-img"
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
           </div>
         </div>
       </div>

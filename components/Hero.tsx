@@ -1,24 +1,64 @@
 "use client";
 
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import ArrowLink from "./ArrowLink";
 import { useLanguage } from "@/context/LanguageContext";
 
+// Slides del hero. Para sumar más fotos, agregá objetos a este array.
+const HERO_SLIDES = [
+  {
+    src: "/images/hero-labios.png",
+    alt: "Green Ray LED — Luz de alta precisión sobre primer plano editorial",
+  },
+  {
+    src: "/images/design-01.jpg",
+    alt: "Green Ray LED — Iluminación arquitectónica en living de diseño",
+  },
+];
+
+const SLIDE_INTERVAL = 6000; // ms entre transiciones
+
 export default function Hero() {
   const { t } = useLanguage();
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    if (HERO_SLIDES.length < 2) return;
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return; // respeta usuarios con movimiento reducido
+    }
+    const id = setInterval(() => {
+      setActive((i) => (i + 1) % HERO_SLIDES.length);
+    }, SLIDE_INTERVAL);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <section className="hero hero--editorial" aria-labelledby="hero-title">
-      {/* Background: full black with image placeholder */}
+      {/* Background: slider de imágenes editoriales con auto-loop */}
       <div className="hero-bg">
-        <div className="hero-bg-placeholder" aria-label="Editorial hero photograph — to be provided">
-          <div className="hero-bg-placeholder-inner">
-            <span className="placeholder-label">FOTOGRAFÍA EDITORIAL</span>
-            <span className="placeholder-desc">
-              Primerísimo primer plano · Luz de alta precisión · Fondo negro absoluto
-            </span>
-            <span className="placeholder-size">(2560 × 1440 px mínimo · formato landscape · fondo negro puro)</span>
+        {HERO_SLIDES.map((slide, i) => (
+          <div
+            key={slide.src}
+            className={`hero-slide${i === active ? " is-active" : ""}`}
+            aria-hidden={i === active ? undefined : true}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              priority={i === 0}
+              quality={95}
+              sizes="100vw"
+              className="hero-bg-img"
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
           </div>
-        </div>
+        ))}
         <div className="hero-bg-overlay" />
       </div>
 
