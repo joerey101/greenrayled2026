@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function ArchitecturalIntegration() {
@@ -30,21 +31,18 @@ export default function ArchitecturalIntegration() {
           <p className="arch-claim">{t.arch.claim}</p>
         </div>
 
-        {/* Right: image placeholder */}
+        {/* Right: single full-height image */}
         <div className="arch-media">
-          <div className="perception-img-placeholder arch-placeholder" aria-label="Architectural integration photography">
-            <div className="perception-img-placeholder-inner">
-              <span className="placeholder-label">FOTOGRAFÍA</span>
-              <span className="placeholder-desc">Luminaria embutida / integrada en arquitectura — detalle de desaparición</span>
-              <span className="placeholder-size">(1400 × 1000 px · landscape o portrait · negros profundos)</span>
-            </div>
-          </div>
-          <div className="perception-img-placeholder arch-placeholder arch-placeholder--secondary" aria-label="Architectural integration detail">
-            <div className="perception-img-placeholder-inner">
-              <span className="placeholder-label">FOTOGRAFÍA / ESQUEMA</span>
-              <span className="placeholder-desc">Sección / corte técnico de integración</span>
-              <span className="placeholder-size">(1400 × 700 px · landscape · puede ser dibujo técnico)</span>
-            </div>
+          <div className="arch-img-main">
+            <Image
+              src="/images/122.jpg"
+              alt="Green Ray LED — familia de luminarias de integración arquitectónica"
+              fill
+              quality={95}
+              sizes="(max-width: 1050px) 100vw, 50vw"
+              className="arch-img-real"
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
           </div>
         </div>
       </div>

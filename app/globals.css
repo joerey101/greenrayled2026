@@ -915,7 +915,7 @@ main { overflow: clip; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8vw;
-  align-items: start;
+  align-items: stretch;
 }
 .arch-copy.section-shell { padding-right: 0; }
 .arch-title {
@@ -952,10 +952,9 @@ main { overflow: clip; }
   margin: 0;
 }
 .arch-media {
-  display: grid;
-  grid-template-rows: 1.5fr 1fr;
-  gap: 16px;
-  height: 680px;
+  position: relative;
+  overflow: hidden;
+  min-height: 680px;
 }
 .arch-placeholder { min-height: 0; border: 1px dashed rgba(255,255,255,.1); }
 .arch-placeholder--secondary { }
@@ -963,6 +962,7 @@ main { overflow: clip; }
   position: relative;
   overflow: hidden;
   min-height: 0;
+  height: 100%;
 }
 .arch-img-real {
   object-fit: cover;
@@ -1070,7 +1070,7 @@ main { overflow: clip; }
   .commercial-project-card-1 { grid-column: span 2; grid-row: auto; }
   .commercial-project-card-1 .commercial-project-img .perception-img-placeholder { min-height: 400px; }
   .arch-inner { grid-template-columns: 1fr; }
-  .arch-media { height: auto; grid-template-rows: 380px 240px; }
+  .arch-media { min-height: 420px; }
   .mini-inner { grid-template-columns: 1fr; }
   .mini-media { order: -1; grid-template-columns: 1fr; }
   .mini-placeholder-main { min-height: 380px; grid-row: auto; }
