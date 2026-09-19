@@ -98,62 +98,7 @@ export default function Home() {
       {/* 09 — Miniaturization */}
       <Miniaturization />
 
-      {/* 10 — Custom Made */}
-      <section className="custom-made section-shell">
-        <div className="custom-aside"><span>{t.customMade.number}</span><span>{t.customMade.label}</span></div>
-        <div className="custom-main">
-          <h2>{t.customMade.titleLine1}<br />{t.customMade.titleLine2}</h2>
-          <p>{t.customMade.copy}</p>
-          <p className="custom-claim">{t.customMade.claim}</p>
-          <ArrowLink href="#contacto">{t.customMade.cta}</ArrowLink>
-        </div>
-      </section>
-
-      {/* 11 — Professionals */}
-      <section className="audiences section-shell" id="profesionales">
-        <article className="audience-block">
-          <div className="audience-number">{t.audiences.prof.number}</div>
-          <p className="micro-label">{t.audiences.prof.label}</p>
-          <h2>{t.audiences.prof.titleLine1}<br />{t.audiences.prof.titleLine2}</h2>
-          <p>{t.audiences.prof.copy}</p>
-          <ul>
-            {t.audiences.prof.items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <ArrowLink href="#contacto">{t.audiences.prof.cta}</ArrowLink>
-        </article>
-        <article className="audience-block audience-secondary" id="residencial">
-          <div className="audience-number">{t.audiences.res.number}</div>
-          <p className="micro-label">{t.audiences.res.label}</p>
-          <h2>{t.audiences.res.titleLine1}<br />{t.audiences.res.titleLine2}</h2>
-          <p>{t.audiences.res.copy}</p>
-          <ul>
-            {t.audiences.res.items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <ArrowLink href="#contacto">{t.audiences.res.cta}</ArrowLink>
-        </article>
-      </section>
-
-      {/* 12 — Green Ray Philosophy */}
-      <section className="manifesto section-shell" id="green-ray">
-        <div className="manifesto-grid">
-          <SectionIntro
-            number={t.manifesto.number}
-            label={t.manifesto.label}
-            title={<>{t.manifesto.titleLine1}<br />{t.manifesto.titleLine2}</>}
-          />
-          <div className="manifesto-copy">
-            <p className="lead">{t.manifesto.lead}</p>
-            <p>{t.manifesto.copy}</p>
-            <ArrowLink href="#profesionales">{t.manifesto.cta}</ArrowLink>
-          </div>
-        </div>
-      </section>
-
-      {/* 13 — Contact / Start a Project */}
+      {/* 10 — Contact / Start a Project */}
       <section className="final-cta" id="contacto">
         <div className="section-shell final-cta-inner">
           <p className="micro-label">{t.finalCta.label}</p>
@@ -168,7 +113,6 @@ export default function Home() {
           <div>
             <small>{t.footer.navigate}</small>
             <a href="#lineas">{t.nav.products}</a>
-            <a href="#profesionales">{t.nav.professionals}</a>
             <a href="#tecnologia">Tecnología</a>
             <a href="#comercial">Comercial</a>
           </div>

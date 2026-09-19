@@ -17,9 +17,7 @@ export default function Header() {
 
   const navItems = [
     [t.nav.products, "#lineas"],
-    [t.nav.professionals, "#profesionales"],
     [t.nav.inspiration, "#material"],
-    [t.nav.greenRay, "#green-ray"],
   ] as const;
 
   return (
