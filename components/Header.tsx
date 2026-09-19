@@ -16,7 +16,13 @@ export default function Header() {
   }, [open]);
 
   const navItems = [
-    [t.nav.products, "#lineas"],
+    [t.nav.perception, "#percepcion"],
+    [t.nav.collections, "#lineas"],
+    [t.nav.technology, "#tecnologia"],
+    [t.nav.beam, "#beam-control"],
+    [t.nav.commercial, "#comercial"],
+    [t.nav.integration, "#integracion"],
+    [t.nav.miniaturization, "#miniaturizacion"],
   ] as const;
 
   return (
@@ -32,9 +38,12 @@ export default function Header() {
         />
       </Link>
 
-      <nav className="desktop-nav" aria-label={t.nav.products}>
-        {navItems.map(([label, href]) => (
-          <Link key={label} href={href}>{label}</Link>
+      <nav className="desktop-nav" aria-label={t.nav.menu}>
+        {navItems.map(([label, href], index) => (
+          <Link key={href} href={href}>
+            <span className="nav-num">{`0${index + 1}`}</span>
+            <span className="nav-label">{label}</span>
+          </Link>
         ))}
       </nav>
 
@@ -68,15 +77,15 @@ export default function Header() {
       </div>
 
       <div className={`mobile-menu ${open ? "is-open" : ""}`}>
-        <nav aria-label="Mobile navigation">
+        <nav aria-label={t.nav.menu}>
           {navItems.map(([label, href], index) => (
-            <Link key={label} href={href} onClick={() => setOpen(false)}>
-              <small>0{index + 1}</small>
+            <Link key={href} href={href} onClick={() => setOpen(false)}>
+              <small>{`0${index + 1}`}</small>
               <span>{label}</span>
             </Link>
           ))}
-          <Link href="#contacto" onClick={() => setOpen(false)}>
-            <small>06</small>
+          <Link href="#contacto" className="mobile-contact-link" onClick={() => setOpen(false)}>
+            <small>→</small>
             <span>{t.nav.contact}</span>
           </Link>
         </nav>
@@ -104,5 +113,3 @@ export default function Header() {
     </header>
   );
 }
-
-

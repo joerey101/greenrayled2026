@@ -26,13 +26,13 @@ export default function Home() {
     <main>
       <Header />
 
-      {/* 01 — Hero / Desire */}
+      {/* Hero / Desire */}
       <Hero />
 
-      {/* 02 — Perception of Light */}
+      {/* 01 — Perception of Light */}
       <PerceptionSection />
 
-      {/* 03 — High End / Garden Line / Architectural */}
+      {/* 02 — High End / Garden Line / Architectural */}
       <section className="lines-section" id="lineas">
         <div className="section-shell">
           <SectionIntro
@@ -65,22 +65,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 04 — Lighting Technology */}
+      {/* 03 — Lighting Technology */}
       <TechSection />
 
-      {/* 05 — Beam Control */}
+      {/* 04 — Beam Control */}
       <BeamControl />
 
-      {/* 06 — Retail / Hospitality / Commercial */}
+      {/* 05 — Retail / Hospitality / Commercial */}
       <CommercialSection />
 
-      {/* 07 — Architectural Integration */}
+      {/* 06 — Architectural Integration */}
       <ArchitecturalIntegration />
 
-      {/* 08 — Miniaturization */}
+      {/* 07 — Miniaturization */}
       <Miniaturization />
 
-      {/* 09 — Contact / Start a Project */}
+      {/* 08 — Contact / Start a Project */}
       <section className="final-cta" id="contacto">
         <div className="section-shell final-cta-inner">
           <p className="micro-label">{t.finalCta.label}</p>
@@ -94,9 +94,9 @@ export default function Home() {
         <div className="footer-columns">
           <div>
             <small>{t.footer.navigate}</small>
-            <a href="#lineas">{t.nav.products}</a>
-            <a href="#tecnologia">Tecnología</a>
-            <a href="#comercial">Comercial</a>
+            <a href="#lineas">{t.nav.collections}</a>
+            <a href="#tecnologia">{t.nav.technology}</a>
+            <a href="#comercial">{t.nav.commercial}</a>
           </div>
           <div>
             <small>{t.footer.region}</small>
