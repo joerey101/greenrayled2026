@@ -72,7 +72,7 @@ export default function BeamControl() {
                 src={SCENE}
                 alt="Green Ray — escena de galería en penumbra"
                 fill
-                quality={95}
+                unoptimized
                 sizes="(max-width: 1050px) 100vw, 1200px"
                 priority
                 style={{ objectFit: "cover" }}
@@ -95,7 +95,7 @@ export default function BeamControl() {
                   src={SCENE}
                   alt=""
                   fill
-                  quality={95}
+                  unoptimized
                   sizes="(max-width: 1050px) 100vw, 1200px"
                   style={{ objectFit: "cover" }}
                 />

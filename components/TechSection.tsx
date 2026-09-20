@@ -84,7 +84,7 @@ export default function TechSection() {
               src="/images/joya.webp"
               alt="Joyería arquitectónica — sistema de riel ultradelgado · Green Ray LED"
               fill
-              quality={95}
+              unoptimized
               className="tech-rail-img"
               style={{ objectFit: "cover", objectPosition: "center" }}
             />

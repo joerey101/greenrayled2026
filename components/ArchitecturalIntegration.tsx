@@ -38,7 +38,7 @@ export default function ArchitecturalIntegration() {
               src="/images/122a.jpg"
               alt="Green Ray LED — familia de luminarias lineales y de riel"
               fill
-              quality={95}
+              unoptimized
               sizes="(max-width: 1050px) 100vw, 50vw"
               className="arch-img-real"
               style={{ objectFit: "cover", objectPosition: "center" }}
@@ -49,7 +49,7 @@ export default function ArchitecturalIntegration() {
               src="/images/122b.jpg"
               alt="Green Ray LED — luminarias integradas en cielorraso"
               fill
-              quality={95}
+              unoptimized
               sizes="(max-width: 1050px) 100vw, 50vw"
               className="arch-img-real"
               style={{ objectFit: "cover", objectPosition: "center" }}

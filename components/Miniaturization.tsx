@@ -16,7 +16,7 @@ export default function Miniaturization() {
               src="/images/minitura.jpg"
               alt="Green Ray LED — luminaria lineal miniaturizada sostenida en mano"
               fill
-              quality={95}
+              unoptimized
               sizes="(max-width: 1050px) 100vw, 50vw"
               style={{ objectFit: "cover", objectPosition: "center" }}
             />

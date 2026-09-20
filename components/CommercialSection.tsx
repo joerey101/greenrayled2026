@@ -51,7 +51,8 @@ export default function CommercialSection() {
                   src="/images/charo_light.webp"
                   alt={proj.name}
                   fill
-                  quality={90}
+                  quality={85}
+                  unoptimized
                   sizes="(max-width: 1050px) 100vw, 60vw"
                   className="cover-image"
                   style={{ objectFit: "cover" }}

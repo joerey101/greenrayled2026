@@ -52,8 +52,9 @@ export default function Hero() {
               alt={slide.alt}
               fill
               priority={i === 0}
-              quality={95}
+              quality={85}
               sizes="100vw"
+              unoptimized
               className="hero-bg-img"
               style={{ objectFit: "cover", objectPosition: "center" }}
             />
