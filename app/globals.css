@@ -814,6 +814,24 @@ main { overflow: clip; }
 .bc-col[aria-pressed="true"] .bc-nm { color: var(--bc-bronze-2); }
 .bc-col[aria-pressed="true"] .bc-ds { color: var(--bc-bronze); }
 
+/* MOBILE: los 3 módulos se apilan uno arriba del otro, debajo de la escena.
+   (En desktop .bc-cols sigue como overlay absoluto sobre el stage — sin cambios.) */
+@media (max-width: 768px) {
+  .bc-cols { position: static; inset: auto; flex-direction: column; }
+  .bc-col {
+    flex: none;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px 2px;
+    gap: 4px;
+    border-top: 1px solid var(--bc-hair);
+  }
+  .bc-col:last-child { border-bottom: 1px solid var(--bc-hair); }
+  .bc-col .bc-deg { font-size: 2rem; }
+  .bc-col .bc-nm  { font-size: .72rem; }
+  .bc-col .bc-ds  { font-size: .62rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .bc-root *, .bc-base { transition: none !important; }
 }

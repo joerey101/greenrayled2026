@@ -149,23 +149,24 @@ export default function BeamControl() {
               />
             ))}
 
-            {/* Controles (columnas clickeables) */}
-            <div className="bc-cols">
-              {SECTORS.map((s, i) => (
-                <button
-                  key={`col-${s.deg}`}
-                  type="button"
-                  className="bc-col"
-                  aria-pressed={on[i]}
-                  aria-label={`${language === "es" ? "Encender" : "Toggle"} ${s.deg} — ${sectors[i].name}`}
-                  onClick={() => toggle(i)}
-                >
-                  <span className="bc-deg">{s.deg}</span>
-                  <span className="bc-nm">{sectors[i].name}</span>
-                  <span className="bc-ds">{sectors[i].desc}</span>
-                </button>
-              ))}
-            </div>
+          </div>
+
+          {/* Controles (columnas clickeables) — overlay sobre la escena en desktop, apiladas en mobile */}
+          <div className="bc-cols">
+            {SECTORS.map((s, i) => (
+              <button
+                key={`col-${s.deg}`}
+                type="button"
+                className="bc-col"
+                aria-pressed={on[i]}
+                aria-label={`${language === "es" ? "Encender" : "Toggle"} ${s.deg} — ${sectors[i].name}`}
+                onClick={() => toggle(i)}
+              >
+                <span className="bc-deg">{s.deg}</span>
+                <span className="bc-nm">{sectors[i].name}</span>
+                <span className="bc-ds">{sectors[i].desc}</span>
+              </button>
+            ))}
           </div>
         </div>
       </div>
