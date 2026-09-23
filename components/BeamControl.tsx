@@ -169,6 +169,35 @@ export default function BeamControl() {
             ))}
           </div>
         </div>
+
+        {/* MOBILE: cada módulo (imagen + haz encendido + label) apilado uno debajo del otro */}
+        <div className="bc-mobile">
+          {SECTORS.map((s, i) => (
+            <div className="bcm-card" key={`m-${s.deg}`}>
+              <div className="bcm-stage" style={{ aspectRatio: ASPECT }}>
+                <div className="bc-base" style={{ filter: "brightness(0.26) contrast(1.06) saturate(.9)" }}>
+                  <Image src={SCENE} alt="" fill unoptimized sizes="100vw" style={{ objectFit: "cover" }} />
+                </div>
+                <div
+                  className="bc-reveal"
+                  style={{ opacity: 1, maskImage: revealMask(s), WebkitMaskImage: revealMask(s) }}
+                >
+                  <Image src={SCENE} alt="" fill unoptimized sizes="100vw" style={{ objectFit: "cover" }} />
+                </div>
+                <div className="bc-fx">
+                  <div className="bc-cone" style={{ left: `${s.fx}%`, top: `${s.fy}%`, width: `${s.coneW}%`, height: `${s.coneBot - s.fy}%`, opacity: 1 }} />
+                  <div className="bc-pool" style={{ left: `${s.bx}%`, top: `${s.by}%`, width: `${s.poolW}%`, height: `${s.poolW * 0.3}%`, opacity: 1 }} />
+                  <div className="bc-dot" style={{ left: `${s.fx}%`, top: `${s.fy}%`, opacity: 1, boxShadow: dotGlow(i) }} />
+                </div>
+              </div>
+              <div className="bcm-label">
+                <span className="bc-deg">{s.deg}</span>
+                <span className="bc-nm">{sectors[i].name}</span>
+                <span className="bc-ds">{sectors[i].desc}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

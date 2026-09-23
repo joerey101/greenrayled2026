@@ -814,22 +814,28 @@ main { overflow: clip; }
 .bc-col[aria-pressed="true"] .bc-nm { color: var(--bc-bronze-2); }
 .bc-col[aria-pressed="true"] .bc-ds { color: var(--bc-bronze); }
 
-/* MOBILE: los 3 módulos se apilan uno arriba del otro, debajo de la escena.
-   (En desktop .bc-cols sigue como overlay absoluto sobre el stage — sin cambios.) */
+/* MOBILE: cada módulo como imagen individual (con su haz encendido) apilado.
+   En desktop se oculta .bc-mobile y se mantiene el stage interactivo (.bc-root). */
+.bc-mobile { display: none; }
 @media (max-width: 768px) {
-  .bc-cols { position: static; inset: auto; flex-direction: column; }
-  .bc-col {
-    flex: none;
-    align-items: flex-start;
-    text-align: left;
-    padding: 20px 2px;
-    gap: 4px;
-    border-top: 1px solid var(--bc-hair);
+  .bc-root { display: none; }
+  .bc-mobile {
+    display: flex; flex-direction: column; gap: 44px;
+    /* variables del beam (para conos/charcos/haz) — mismas que .bc-root */
+    --bc-warm: 255, 240, 205;
+    --bc-hair: rgba(240,241,236,.10);
+    --bc-ivory: #f3f2ed;
+    --bc-bronze: #c5a06a;
+    --bc-bronze-2: #d9bc8c;
+    --bc-muted: rgba(240,241,236,.5);
+    --bc-reveal-filter: brightness(2.5) contrast(1.18) saturate(1.05) sepia(.10);
+    color: var(--bc-ivory);
   }
-  .bc-col:last-child { border-bottom: 1px solid var(--bc-hair); }
-  .bc-col .bc-deg { font-size: 2rem; }
-  .bc-col .bc-nm  { font-size: .72rem; }
-  .bc-col .bc-ds  { font-size: .62rem; }
+  .bcm-stage { position: relative; width: 100%; overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,.06); }
+  .bcm-label { display: flex; flex-direction: column; gap: 5px; padding: 16px 2px 0; }
+  .bcm-label .bc-deg { font-size: 2.1rem; font-weight: 300; letter-spacing: -.01em; font-variant-numeric: tabular-nums; color: var(--bc-ivory); text-shadow: 0 0 22px rgba(var(--bc-warm),.5); }
+  .bcm-label .bc-nm  { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--bc-bronze-2); }
+  .bcm-label .bc-ds  { font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--bc-bronze); }
 }
 
 @media (prefers-reduced-motion: reduce) {
