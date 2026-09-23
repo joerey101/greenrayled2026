@@ -556,8 +556,10 @@ main { overflow: clip; }
   min-height: 560px;
   margin-top: 0;
 }
-.perception-video-row { position: relative; border-top: 1px solid var(--line); background: #000; height: clamp(360px, 56vw, 720px); overflow: hidden; }
-.perception-video { position: absolute; top: 0; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; }
+/* La caja adopta el MISMO aspecto que el video (1920x800 = 2.4:1).
+   Así el video se ve completo (100%), sin recorte y sin franjas, en cualquier ancho. */
+.perception-video-row { position: relative; border-top: 1px solid var(--line); background: #000; width: 100%; aspect-ratio: 1920 / 800; overflow: hidden; }
+.perception-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .perception-image-row .perception-img-placeholder { min-height: 560px; border: none; border-right: 1px solid var(--line); }
 .perception-img-main {
   position: relative;
@@ -644,6 +646,11 @@ main { overflow: clip; }
   line-height: 1.65;
   margin: 0;
 }
+/* Video de tecnología — mismo tratamiento que el de percepción:
+   la caja adopta el aspecto del video (1920x900) → se ve completo, responsive, sin recorte. */
+.tech-video-row { position: relative; border-top: 1px solid var(--line); background: #000; width: 100%; aspect-ratio: 1920 / 900; overflow: hidden; margin-bottom: 0; }
+.tech-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+
 .tech-specs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -866,9 +873,11 @@ main { overflow: clip; }
   gap: 24px 24px;
   margin-bottom: 60px;
 }
-.commercial-project-card { display: flex; flex-direction: column; gap: 12px; }
+.commercial-project-card { display: flex; flex-direction: column; gap: 12px; height: 100%; }
 .commercial-project-card-1 { grid-row: span 2; }
 .commercial-project-img { position: relative; }
+/* La imagen destacada crece para llenar las 2 filas → su base coincide con la base de la 2da imagen (mosaico prolijo en desktop) */
+.commercial-project-card-1 .commercial-project-img { flex: 1; }
 .commercial-project-card-1 .commercial-project-img .perception-img-placeholder { min-height: 600px; }
 .commercial-project-card-2 .commercial-project-img .perception-img-placeholder,
 .commercial-project-card-3 .commercial-project-img .perception-img-placeholder { min-height: 280px; }
@@ -980,7 +989,7 @@ main { overflow: clip; }
 .mini-section {
   background: #0c0d0c;
   padding-top: clamp(100px, 11vw, 180px);
-  padding-bottom: clamp(100px, 11vw, 180px);
+  padding-bottom: 0;                       /* el video full-bleed cierra la sección; el módulo siguiente queda pegado a su borde inferior */
   border-top: 1px solid var(--line);
 }
 .mini-inner {
@@ -989,6 +998,9 @@ main { overflow: clip; }
   gap: 8vw;
   align-items: center;
 }
+/* Video de miniaturización — mismo tratamiento (completo, responsive, sin recorte). */
+.mini-video-row { position: relative; border-top: 1px solid var(--line); background: #000; width: 100%; aspect-ratio: 1920 / 900; overflow: hidden; margin-top: clamp(60px, 8vw, 120px); }
+.mini-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .mini-media {
   position: relative;
 }

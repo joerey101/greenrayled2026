@@ -11,6 +11,13 @@ const VERTICALS = [
   { id: "corporate", icon: "◈" },
 ];
 
+// Fotos reales por índice de proyecto (el resto muestra placeholder)
+const PROJECT_IMAGES: Record<number, string> = {
+  0: "/images/charo_light.webp",     // Charo
+  1: "/images/MC%20AOTA.jpg",        // McDonald's
+  2: "/images/Viasono%20BA%2002.jpg", // Viasono
+};
+
 export default function CommercialSection() {
   const { t } = useLanguage();
 
@@ -39,16 +46,19 @@ export default function CommercialSection() {
 
       {/* Projects grid — placeholders for Charo, McDonald's, etc. */}
       <div className="commercial-projects section-shell">
-        {t.commercial.projects.map((proj, i) => (
+        {t.commercial.projects.map((proj, i) => {
+          const img = PROJECT_IMAGES[i];
+          const minHeight = i === 0 ? "600px" : "280px";
+          return (
           <div className={`commercial-project-card commercial-project-card-${i + 1}`} key={i}>
-            {/* Image placeholder */}
+            {/* Foto real si existe; si no, placeholder */}
             <div
               className="commercial-project-img"
-              style={i === 0 ? { position: "relative", minHeight: "600px" } : undefined}
+              style={img ? { position: "relative", minHeight } : undefined}
             >
-              {i === 0 ? (
+              {img ? (
                 <Image
-                  src="/images/charo_light.webp"
+                  src={img}
                   alt={proj.name}
                   fill
                   quality={85}
@@ -73,7 +83,8 @@ export default function CommercialSection() {
               <span className="commercial-project-tag">{proj.tag}</span>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="commercial-footer section-shell">

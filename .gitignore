@@ -8,3 +8,7 @@ out
 npm-debug.log*
 tsconfig.tsbuildinfo
 
+# Librerías de edición de video (no publicar)
+*.imovielibrary/
+**/Biblioteca iMovie.imovielibrary/
+

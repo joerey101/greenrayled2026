@@ -33,7 +33,7 @@ export default function PerceptionSection() {
       <div className="perception-video-row">
         <video
           className="perception-video"
-          src="/images/K24-4K_h2651.mp4"
+          src="/images/GLR-light-WEB-FINAL.mp4"
           autoPlay
           loop
           muted

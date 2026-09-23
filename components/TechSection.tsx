@@ -56,6 +56,19 @@ export default function TechSection() {
         <p className="tech-intro">{t.tech.intro}</p>
       </div>
 
+      {/* Video full-bleed — mismo tratamiento que el de percepción (completo, responsive, sin recorte) */}
+      <div className="tech-video-row">
+        <video
+          className="tech-video"
+          src="/images/Video%20Green%20Ray%20Led%2002.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+        />
+      </div>
+
       <div className="tech-specs section-shell">
         {t.tech.specs.map((spec, i) => (
           <div className="tech-spec" key={i}>

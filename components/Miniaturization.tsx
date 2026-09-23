@@ -44,6 +44,19 @@ export default function Miniaturization() {
           </div>
         </div>
       </div>
+
+      {/* Video full-bleed debajo del módulo — mismo tratamiento (completo, responsive, sin recorte) */}
+      <div className="mini-video-row">
+        <video
+          className="mini-video"
+          src="/images/Video%20Green%20Ray%20Led%2003.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+        />
+      </div>
     </section>
   );
 }
