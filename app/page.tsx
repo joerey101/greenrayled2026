@@ -19,6 +19,32 @@ const lineImages: Record<string, string> = {
   "architectural": "/images/viasono-detail-03.jpg",
 };
 
+// Título del CTA final con cortes por breakpoint.
+// Desktop: 2 líneas del diccionario ("What should light do" / "for your space?").
+// Mobile: "What" / "should light" / "do for your" / "space?" (br .cta-br-* en globals.css).
+function finalCtaTitle(line1: string, line2: string) {
+  const a = line1.split(" ");
+  const b = line2.split(" ");
+  const first = a[0];
+  const midA = a.slice(1, -1).join(" ");
+  const lastA = a[a.length - 1];
+  const headB = b.slice(0, -1).join(" ");
+  const lastB = b[b.length - 1];
+  return (
+    <>
+      {first}
+      <br className="cta-br-m" />
+      {" "}{midA}
+      <br className="cta-br-m" />
+      {" "}{lastA}
+      <br className="cta-br-d" />
+      {" "}{headB}
+      <br className="cta-br-m" />
+      {" "}{lastB}
+    </>
+  );
+}
+
 export default function Home() {
   const { t } = useLanguage();
 
@@ -83,7 +109,7 @@ export default function Home() {
       <section className="final-cta" id="contacto">
         <div className="section-shell final-cta-inner">
           <p className="micro-label">{t.finalCta.label}</p>
-          <h2>{t.finalCta.titleLine1}<br />{t.finalCta.titleLine2}</h2>
+          <h2>{finalCtaTitle(t.finalCta.titleLine1, t.finalCta.titleLine2)}</h2>
           <ArrowLink href="mailto:info@greenrayled.com" inverted>{t.finalCta.cta}</ArrowLink>
         </div>
       </section>
