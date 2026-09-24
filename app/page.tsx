@@ -63,7 +63,7 @@ export default function Home() {
         <div className="section-shell">
           <SectionIntro
             label={t.collections.label}
-            title={<><span style={{whiteSpace:"nowrap"}}>{t.collections.titleLine1}</span><br />{t.collections.titleLine2}</>}
+            title={<><span className="nowrap-desktop">{t.collections.titleLine1}</span><br />{t.collections.titleLine2}</>}
           />
         </div>
         <div className="line-list">

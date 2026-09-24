@@ -80,6 +80,8 @@ main { overflow: clip; }
 .section-kicker { color: #66645e; }
 .section-kicker span { color: var(--green); letter-spacing: .12em; }
 .section-intro h2 { font-size: clamp(44px, 5.3vw, 92px); font-weight: 300; letter-spacing: -.05em; line-height: .98; margin: 36px 0 0; }
+/* nowrap solo en desktop; en mobile el título puede cortar para no desbordar */
+.nowrap-desktop { white-space: nowrap; }
 .section-intro > p { max-width: 580px; color: #6d6b65; font-size: 16px; line-height: 1.7; }
 .manifesto-copy { padding-top: 50px; max-width: 470px; }
 .manifesto-copy p { color: #67655f; line-height: 1.72; }
@@ -326,6 +328,7 @@ main { overflow: clip; }
   .project-stamp .arrow-link { display: none; }
   .manifesto { padding-top: 90px; padding-bottom: 90px; }
   .section-intro h2 { font-size: clamp(44px, 13vw, 64px); }
+  .nowrap-desktop { white-space: normal; }
   .audience-block { min-height: 630px; }
   .audience-number { margin-bottom: 44px; }
   .line-image-wrap { min-height: 54svh; }
