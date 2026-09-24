@@ -3,6 +3,19 @@
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
+// Corte "primera palabra / resto" — el <br> solo actúa en mobile (ver globals.css)
+function firstWordBreak(text: string) {
+  const idx = text.indexOf(" ");
+  if (idx === -1) return text;
+  return (
+    <>
+      {text.slice(0, idx)}
+      <br className="mini-break-mobile" />
+      {text.slice(idx + 1)}
+    </>
+  );
+}
+
 export default function Miniaturization() {
   const { t } = useLanguage();
 
@@ -27,9 +40,9 @@ export default function Miniaturization() {
         <div className="mini-copy">
           <p className="micro-label">{t.mini.label}</p>
           <h2 className="mini-title">
-            {t.mini.titleLine1}
+            {firstWordBreak(t.mini.titleLine1)}
             <br />
-            <em>{t.mini.titleLine2}</em>
+            <em>{firstWordBreak(t.mini.titleLine2)}</em>
           </h2>
           <p className="mini-body">{t.mini.copy}</p>
           <p className="mini-claim">{t.mini.claim}</p>

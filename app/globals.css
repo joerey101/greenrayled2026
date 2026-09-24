@@ -1065,6 +1065,12 @@ main { overflow: clip; }
   margin: 0 0 36px;
 }
 .mini-title em { font-style: normal; color: rgba(243,242,237,.35); }
+/* Salto "primera palabra / resto" solo en mobile; en desktop el título fluye normal */
+.mini-break-mobile { display: none; }
+@media (max-width: 768px) {
+  .mini-title { font-size: 32px; line-height: 1.06; letter-spacing: -.03em; }
+  .mini-break-mobile { display: inline; }
+}
 .mini-body { color: #8a8a83; line-height: 1.7; max-width: 460px; margin: 0 0 24px; }
 .mini-claim {
   font-size: clamp(18px, 1.5vw, 24px);
