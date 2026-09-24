@@ -39,7 +39,8 @@ function dotGlow(i: number) {
 
 export default function BeamControl() {
   const { t, language } = useLanguage();
-  const [on, setOn] = useState<boolean[]>([false, false, false]);
+  // Desktop: las 3 luces arrancan ENCENDIDAS (se pueden apagar al hacer clic).
+  const [on, setOn] = useState<boolean[]>([true, true, true]);
   const anyOn = on.some(Boolean);
 
   const toggle = (i: number) =>
