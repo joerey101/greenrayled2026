@@ -44,6 +44,17 @@ export default function Miniaturization() {
             <br />
             <em>{firstWordBreak(t.mini.titleLine2)}</em>
           </h2>
+          {/* Imagen solo mobile: aparece debajo del título */}
+          <div className="mini-img mini-media-mobile">
+            <Image
+              src="/images/minitura.jpg"
+              alt="Green Ray LED — luminaria lineal miniaturizada sostenida en mano"
+              fill
+              unoptimized
+              sizes="100vw"
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
+          </div>
           <p className="mini-body">{t.mini.copy}</p>
           <p className="mini-claim">{t.mini.claim}</p>
 

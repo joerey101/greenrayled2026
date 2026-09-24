@@ -1055,6 +1055,12 @@ main { overflow: clip; }
   aspect-ratio: 767 / 745;
   overflow: hidden;
 }
+/* Imagen de miniaturización solo mobile (entre título y body) */
+.mini-media-mobile { display: none; }
+@media (max-width: 768px) {
+  .mini-media { display: none; }
+  .mini-media-mobile { display: block; margin: 26px 0 34px; }
+}
 .mini-placeholder-main {
   min-height: 540px;
   border: 1px dashed rgba(255,255,255,.1);
