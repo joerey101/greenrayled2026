@@ -928,6 +928,12 @@ main { overflow: clip; }
   color: var(--green) !important;
   margin-top: 4px;
 }
+/* MOBILE: agrandar los textos de las fichas de proyecto para que se lean bien */
+@media (max-width: 768px) {
+  .commercial-project-meta strong { font-size: 16px; }
+  .commercial-project-meta span   { font-size: 13px; }
+  .commercial-project-tag         { font-size: 11px !important; }
+}
 .commercial-footer {
   display: flex;
   align-items: center;
