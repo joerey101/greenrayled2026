@@ -170,19 +170,19 @@ export default function BeamControl() {
           </div>
         </div>
 
-        {/* MOBILE: cada módulo (imagen + haz encendido + label) apilado uno debajo del otro */}
+        {/* MOBILE: cada haz como pantalla completa (100svh), encendido, con su haz centrado */}
         <div className="bc-mobile">
           {SECTORS.map((s, i) => (
             <div className="bcm-card" key={`m-${s.deg}`}>
-              <div className="bcm-stage" style={{ aspectRatio: ASPECT }}>
+              <div className="bcm-inner" style={{ transform: `translateX(-${s.fx}%)` }}>
                 <div className="bc-base" style={{ filter: "brightness(0.26) contrast(1.06) saturate(.9)" }}>
-                  <Image src={SCENE} alt="" fill unoptimized sizes="100vw" style={{ objectFit: "cover" }} />
+                  <Image src={SCENE} alt="" fill unoptimized sizes="200vw" style={{ objectFit: "cover" }} />
                 </div>
                 <div
                   className="bc-reveal"
                   style={{ opacity: 1, maskImage: revealMask(s), WebkitMaskImage: revealMask(s) }}
                 >
-                  <Image src={SCENE} alt="" fill unoptimized sizes="100vw" style={{ objectFit: "cover" }} />
+                  <Image src={SCENE} alt="" fill unoptimized sizes="200vw" style={{ objectFit: "cover" }} />
                 </div>
                 <div className="bc-fx">
                   <div className="bc-cone" style={{ left: `${s.fx}%`, top: `${s.fy}%`, width: `${s.coneW}%`, height: `${s.coneBot - s.fy}%`, opacity: 1 }} />
