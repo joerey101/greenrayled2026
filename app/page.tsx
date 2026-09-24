@@ -83,7 +83,7 @@ export default function Home() {
                 <h3>{line.title}</h3>
                 <p className="line-claim">{line.claim}</p>
                 <p>{line.copy}</p>
-                <ArrowLink href="#contacto" inverted>{t.collections.explore} {line.title}</ArrowLink>
+                <ArrowLink href="#contacto" inverted disabled>{t.collections.explore} {line.title}</ArrowLink>
               </div>
             </article>
           ))}
@@ -110,7 +110,7 @@ export default function Home() {
         <div className="section-shell final-cta-inner">
           <p className="micro-label">{t.finalCta.label}</p>
           <h2>{finalCtaTitle(t.finalCta.titleLine1, t.finalCta.titleLine2)}</h2>
-          <ArrowLink href="mailto:info@greenrayled.com" inverted>{t.finalCta.cta}</ArrowLink>
+          <ArrowLink href="mailto:info@greenrayled.com" inverted disabled>{t.finalCta.cta}</ArrowLink>
         </div>
       </section>
 
