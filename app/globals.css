@@ -60,9 +60,6 @@ main { overflow: clip; }
 .arrow-link { display: inline-flex; width: max-content; min-width: 210px; justify-content: space-between; align-items: center; gap: 38px; padding: 15px 0 12px; border-bottom: 1px solid currentColor; font-size: 10px; text-transform: uppercase; letter-spacing: .19em; transition: gap .2s, opacity .2s; }
 .arrow-link.inverted { border: 1px solid rgba(255,255,255,.38); padding: 17px 20px; min-width: 0; width: 100%; }
 .arrow-link:hover { opacity: .7; gap: 48px; }
-/* Link anulado: se ve igual pero no navega ni reacciona */
-.arrow-link.is-disabled { pointer-events: none; cursor: default; }
-.arrow-link.is-disabled:hover { opacity: 1; gap: 38px; }
 .hero-index { margin-top: auto; border-top: 1px solid var(--line); padding-top: 28px; display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
 .hero-index div { display: grid; gap: 8px; }
 .hero-index small { color: #777; font-size: 9px; }
