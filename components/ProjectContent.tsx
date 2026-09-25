@@ -50,7 +50,7 @@ export default function ProjectContent({ project }: { project: Project }) {
       <section className="project-next section-shell">
         <p className="micro-label">{t.projectDetail.nextLabel}</p>
         <h2>{t.projectDetail.nextTitleLine1}<br />{t.projectDetail.nextTitleLine2}</h2>
-        <ArrowLink href="mailto:info@greenrayled.com">{t.projectDetail.startProject}</ArrowLink>
+        <ArrowLink href="mailto:infoarg@greenrayled.com">{t.projectDetail.startProject}</ArrowLink>
       </section>
     </main>
   );

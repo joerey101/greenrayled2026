@@ -69,7 +69,7 @@ export default function Header() {
           </Link>
         </nav>
         <div className="mobile-menu-footer">
-          <a href="mailto:info@greenrayled.com" className="mobile-menu-email">info@greenrayled.com</a>
+          <a href="mailto:infoarg@greenrayled.com" className="mobile-menu-email">infoarg@greenrayled.com</a>
         </div>
       </div>
     </header>
