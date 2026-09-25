@@ -1,0 +1,373 @@
+.footer {
+  /* Adopta el verde exacto del sitio (--green). Fallback al verde de marca. */
+  --gr-accent: var(--green, #99c13d);
+  --gr-bg: #020202;
+  --gr-text: #f3f3ee;
+  --gr-line: rgba(255, 255, 255, 0.13);
+  --gr-muted: rgba(255, 255, 255, 0.54);
+
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  width: 100%;
+  background: var(--gr-bg);
+  color: var(--gr-text);
+  font-family: inherit;
+}
+
+.lightField {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 78% 17%,
+      color-mix(in srgb, var(--gr-accent) 16%, transparent),
+      color-mix(in srgb, var(--gr-accent) 5%, transparent) 27%,
+      transparent 58%
+    );
+}
+
+.inner {
+  /* Full-width con el MISMO padding que el resto del sitio (--pad),
+     para que el footer alinee con el logo del header (izq) y el CTA/nav (der). */
+  width: 100%;
+  padding-inline: var(--pad, clamp(22px, 4vw, 74px));
+}
+
+.topLine {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: clamp(34px, 4vw, 58px);
+
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.hero {
+  padding-block: clamp(70px, 8vw, 118px);
+  border-bottom: 1px solid var(--gr-line);
+}
+
+.heading {
+  max-width: 1180px;
+  margin: 0;
+
+  font-size: clamp(56px, 8.15vw, 126px);
+  font-weight: 400;
+  line-height: 0.84;
+  letter-spacing: -0.065em;
+}
+
+.heading span {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.heroBottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.7fr);
+  gap: clamp(34px, 5vw, 76px);
+  align-items: end;
+
+  margin-top: clamp(42px, 5vw, 70px);
+}
+
+.intro {
+  max-width: 540px;
+  margin: 0;
+
+  font-size: clamp(14px, 1.15vw, 16px);
+  line-height: 1.65;
+  color: var(--gr-muted);
+}
+
+.ctaWrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cta {
+  width: min(100%, 230px);
+  min-height: 56px;
+  padding-inline: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: transparent;
+  color: var(--gr-text);
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  transition:
+    background-color 260ms ease,
+    border-color 260ms ease,
+    color 260ms ease,
+    padding 260ms ease;
+}
+
+.arrow {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(150px, 1fr) minmax(150px, 1fr);
+  gap: clamp(34px, 5vw, 72px);
+
+  padding-block: clamp(48px, 5vw, 72px);
+  border-bottom: 1px solid var(--gr-line);
+}
+
+.brand strong {
+  display: block;
+
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.brandLogo {
+  display: block;
+  width: clamp(172px, 14vw, 210px);
+  height: auto;
+}
+
+.brand p {
+  max-width: 310px;
+  margin: 10px 0 0;
+
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.navColumn {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.label {
+  margin-bottom: 7px;
+
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.navColumn a,
+.navColumn span {
+  color: rgba(255, 255, 255, 0.64);
+  text-decoration: none;
+
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.navColumn a {
+  transition: color 220ms ease;
+}
+
+.bottom {
+  /* fila final: solo © + redes, alineadas a la derecha */
+  padding-block: clamp(28px, 3vw, 40px) 24px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+/* Claim dentro de la columna de marca, debajo de la descripción.
+   Se scopea a .brand .claim para ganarle a `.brand p` (que forzaba 12px/gris/max-width). */
+.brand .claim {
+  margin: clamp(30px, 3vw, 48px) 0 0;
+  max-width: none;
+
+  font-size: clamp(28px, 3vw, 46px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  color: var(--gr-text);
+}
+
+.legal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.34);
+}
+
+/* La legal vive dentro de la columna REGION: se empuja al fondo (misma altura
+   que "WORK LOCAL.") y se blinda de las reglas genéricas de .navColumn a/span. */
+.navColumn .legal {
+  margin-top: auto;
+  width: 100%;
+}
+.navColumn .legal span,
+.navColumn .legal a {
+  font-size: 10px;
+  line-height: 1.4;
+  color: inherit;
+}
+
+.social {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.social a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta:hover {
+    padding-inline: 22px;
+    border-color: var(--gr-accent);
+    background: var(--gr-accent);
+    color: #020202;
+  }
+
+  .navColumn a:hover,
+  .social a:hover {
+    color: var(--gr-accent);
+  }
+}
+
+@media (max-width: 980px) {
+  .heading {
+    font-size: clamp(54px, 10vw, 92px);
+  }
+
+  .heroBottom {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .meta {
+    grid-template-columns: 1.3fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .topLine {
+    display: block;
+    padding-top: 28px;
+  }
+
+  .topLine span {
+    display: block;
+  }
+
+  .topLine span + span {
+    margin-top: 8px;
+  }
+
+  .hero {
+    padding-block: 58px 64px;
+  }
+
+  .heading {
+    font-size: clamp(48px, 14vw, 64px);
+    line-height: 0.86;
+  }
+
+  .heroBottom {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    margin-top: 42px;
+  }
+
+  .ctaWrap {
+    justify-content: flex-start;
+  }
+
+  .cta {
+    width: 100%;
+    max-width: none;
+    min-height: 58px;
+  }
+
+  .meta {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-block: 46px;
+  }
+
+  .brand p {
+    max-width: 100%;
+  }
+
+  .navColumn {
+    gap: 0;
+  }
+
+  .label {
+    margin-bottom: 12px;
+  }
+
+  .navColumn a,
+  .navColumn span {
+    width: 100%;
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  /* La legal no debe tomar el alto táctil ni los bordes de los links de nav */
+  .navColumn .legal { margin-top: 40px; }
+  .navColumn .legal span,
+  .navColumn .legal a {
+    width: auto;
+    min-height: 0;
+    border-bottom: none;
+    display: inline-flex;
+  }
+
+  .legal {
+    align-items: flex-start;
+  }
+
+  .social {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta,
+  .navColumn a,
+  .social a {
+    transition: none;
+  }
+}
