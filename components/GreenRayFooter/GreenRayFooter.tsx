@@ -14,7 +14,7 @@ const REGIONS = ["Argentina", "Uruguay", "Latinoamérica"];
 
 export default function GreenRayFooter({
   navItems = DEFAULT_NAV_ITEMS,
-  email = "infoarg@greenrayled.com",
+  email = "contact@greenrayled.com",
 }: {
   navItems?: NavItem[];
   email?: string;
