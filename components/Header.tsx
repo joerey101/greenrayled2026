@@ -6,7 +6,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const { t } = useLanguage();
+  const { t, language, setLanguage } = useLanguage();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -45,6 +45,25 @@ export default function Header() {
       </nav>
 
       <div className="header-actions">
+        <div className="language-switch" role="group" aria-label="Idioma / Language">
+          <button
+            type="button"
+            className={language === "es" ? "active" : ""}
+            aria-pressed={language === "es"}
+            onClick={() => setLanguage("es")}
+          >
+            ES
+          </button>
+          <span aria-hidden="true">/</span>
+          <button
+            type="button"
+            className={language === "en" ? "active" : ""}
+            aria-pressed={language === "en"}
+            onClick={() => setLanguage("en")}
+          >
+            EN
+          </button>
+        </div>
         <Link href="#contacto" className="header-contact">{t.nav.contact}</Link>
         <button
           type="button"
@@ -69,6 +88,24 @@ export default function Header() {
           </Link>
         </nav>
         <div className="mobile-menu-footer">
+          <div className="mobile-lang-switch" role="group" aria-label="Idioma / Language">
+            <button
+              type="button"
+              className={language === "es" ? "active" : ""}
+              aria-pressed={language === "es"}
+              onClick={() => setLanguage("es")}
+            >
+              ES
+            </button>
+            <button
+              type="button"
+              className={language === "en" ? "active" : ""}
+              aria-pressed={language === "en"}
+              onClick={() => setLanguage("en")}
+            >
+              EN
+            </button>
+          </div>
           <a href="mailto:contact@greenrayled.com" className="mobile-menu-email">contact@greenrayled.com</a>
         </div>
       </div>

@@ -9,7 +9,9 @@ function firstWordBreak(text: string) {
   if (idx === -1) return text;
   return (
     <>
-      {text.slice(0, idx)}
+      {/* El espacio se conserva en la primera parte: en desktop el <br> está
+         oculto y las palabras NO deben quedar pegadas. */}
+      {text.slice(0, idx + 1)}
       <br className="mini-break-mobile" />
       {text.slice(idx + 1)}
     </>

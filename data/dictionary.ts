@@ -156,6 +156,17 @@ export type TranslationKeys = {
     region: string;
     regionalTag: string;
     rights: string;
+    intro: string;
+    cta: string;
+    brand: string;
+    explore: string;
+    systems: string;
+    regionsTop: string;
+    headingA: string;
+    headingAccent: string;
+    headingB: string;
+    claimL1: string;
+    claimL2: string;
   };
   projectDetail: {
     back: string;
@@ -183,21 +194,21 @@ export const dictionary: Record<Language, TranslationKeys> = {
       closeMenu: "Cerrar menú",
     },
     hero: {
-      eyebrow: "Light designed to be experienced.",
-      titleLine1: "LIGHT, DESIGNED",
-      titleLine2: "TO BE FELT.",
+      eyebrow: "Luz diseñada para vivirse.",
+      titleLine1: "LUZ, DISEÑADA",
+      titleLine2: "PARA SENTIRSE.",
       description: "Diseñamos la luz. Transformamos la experiencia.",
       ctaProfessional: "Soy profesional / empresa",
       ctaResidential: "Quiero iluminar mi espacio",
       viewProject: "Ver proyecto",
       projectCategory: "Retail / High End",
-      cta: "Explore Green Ray",
+      cta: "Descubrí Green Ray",
     },
     perception: {
-      label: "Perception of Light",
+      label: "Percepción de la luz",
       titleLine1: "La luz no es solo iluminación.",
       titleLine2: "Es arquitectura invisible.",
-      quote: "Light that whispers luxury.",
+      quote: "Luz que susurra lujo.",
       concepts: [
         { verb: "Revela", copy: "Saca a la superficie la textura, el relieve y el carácter de cada material." },
         { verb: "Recorta", copy: "Define bordes. Separa el objeto del fondo. Crea presencia donde antes no había nada." },
@@ -208,7 +219,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     tech: {
-      label: "Lighting Technology",
+      label: "Tecnología de iluminación",
       titleLine1: "Detrás del diseño,",
       titleLine2: "existe ingeniería.",
       intro: "No ocultamos la parte técnica. La convertimos en contenido visual.",
@@ -218,10 +229,10 @@ export const dictionary: Record<Language, TranslationKeys> = {
         { icon: "temp", title: "Temperatura de color", copy: "De 2700K a 6500K. Cada espacio requiere una temperatura distinta para revelar correctamente sus materiales." },
         { icon: "rail", title: "Sistemas de riel", copy: "Ultradelgados, magnéticos o de inducción. Flexibilidad total en la instalación con presencia física mínima." },
       ],
-      railLabel: "Rail Systems",
+      railLabel: "Sistemas de riel",
       railTitle: "Joyería arquitectónica.",
       railCopy: "Los sistemas de riel de nueva generación permiten reconfigurar la iluminación de un espacio sin obra. Ultradelgados, elegantes, con conexión magnética.",
-      railClaim: "Technology as precision. Architecture as canvas.",
+      railClaim: "Tecnología como precisión. Arquitectura como lienzo.",
     },
     beam: {
       label: "Control de luz",
@@ -235,7 +246,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       ],
     },
     commercial: {
-      label: "Retail / Hospitality / Commercial",
+      label: "Retail · Hotelería · Comercial",
       titleLine1: "La luz tiene una función",
       titleLine2: "concreta sobre el negocio.",
       intro: "Green Ray no trabaja solamente arquitectura residencial o jardines. Trabaja espacios donde la luz impacta directamente sobre la experiencia de compra, el producto y la percepción de marca.",
@@ -246,15 +257,15 @@ export const dictionary: Record<Language, TranslationKeys> = {
         { name: "Corporativo", copy: "Espacios de trabajo, salas de reunión y áreas de representación. Calidad de luz que impacta en la productividad." },
       ],
       projects: [
-        { name: "Charo", location: "Buenos Aires · Argentina", tag: "Gastronomía / Hospitality", imageHint: "Ambiente Charo — profundidad, calidez, contraste" },
-        { name: "McDonald's", location: "Argentina", tag: "Global Brand / Commercial", imageHint: "Espacio McDonald's — estándar internacional, iluminación comercial" },
+        { name: "Charo", location: "Buenos Aires · Argentina", tag: "Gastronomía / Hotelería", imageHint: "Ambiente Charo — profundidad, calidez, contraste" },
+        { name: "McDonald's", location: "Argentina", tag: "Marca global / Comercial", imageHint: "Espacio McDonald's — estándar internacional, iluminación comercial" },
         { name: "Viasono", location: "Buenos Aires · Argentina", tag: "Retail / High End", imageHint: "Viasono — producto, materialidad, luz controlada" },
       ],
       validation: "Green Ray trabaja con marcas globales aplicando estándares internacionales de iluminación.",
       cta: "Desarrollar un proyecto comercial",
     },
     arch: {
-      label: "Architectural Integration",
+      label: "Integración arquitectónica",
       titleLine1: "La luminaria desaparece.",
       titleLine2: "La arquitectura permanece.",
       copy: "La integración completa de la luminaria dentro de la arquitectura es uno de los valores fundamentales de Green Ray. No se trata de poner focos. Se trata de construir luz desde adentro.",
@@ -266,14 +277,14 @@ export const dictionary: Record<Language, TranslationKeys> = {
         "Montaje superficial",
         "Sistema magnético",
       ],
-      claim: "The fixture disappears. The architecture remains.",
+      claim: "La luminaria desaparece. El diseño permanece.",
     },
     mini: {
-      label: "Miniaturization",
+      label: "Miniaturización",
       titleLine1: "Máxima capacidad lumínica.",
       titleLine2: "Mínima presencia física.",
       copy: "Las luminarias de nueva generación alcanzan potencias y calidades de luz extraordinarias en formatos extremadamente reducidos. El tamaño deja de ser una limitación. La precisión se convierte en argumento de diseño.",
-      claim: "Small by design. Powerful by engineering.",
+      claim: "Pequeña por diseño. Potente por ingeniería.",
       stats: [
         { value: "< 28mm", label: "Diámetro de apertura" },
         { value: "95+", label: "CRI — Índice de reproducción cromática" },
@@ -282,7 +293,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     manifesto: {
       number: "12",
-      label: "Green Ray Philosophy",
+      label: "Filosofía Green Ray",
       titleLine1: "La luz no sólo ilumina.",
       titleLine2: "Construye la forma en que vivimos un espacio.",
       lead: "Revela materiales. Define volúmenes. Crea profundidad. Dirige la mirada. Construye intimidad.",
@@ -293,10 +304,10 @@ export const dictionary: Record<Language, TranslationKeys> = {
       prof: {
         number: "11",
         label: "Para profesionales & empresas",
-        titleLine1: "Your architecture.",
-        titleLine2: "Our light.",
+        titleLine1: "Tu arquitectura.",
+        titleLine2: "Nuestra luz.",
         copy: "Arquitectura, interiorismo, real estate, retail, gastronomía, hotelería, oficinas e industria.",
-        items: ["Lighting Design", "Especificación", "Custom Made", "Provisión", "Soporte en obra"],
+        items: ["Diseño de iluminación", "Especificación", "A medida", "Provisión", "Soporte en obra"],
         cta: "Desarrollar un proyecto",
       },
       res: {
@@ -311,63 +322,63 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     collections: {
       number: "02",
-      label: "Collections",
-      titleLine1: "Una solución para cada forma",
-      titleLine2: "de habitar la luz.",
+      label: "Colecciones",
+      titleLine1: "Una solución de luz",
+      titleLine2: "para cada espacio.",
       explore: "Explorar",
       items: [
         {
           id: "high-end",
           number: "01",
           title: "High End",
-          claim: "Light becomes part of the architecture.",
+          claim: "La luz se vuelve parte\nde la arquitectura.",
           copy: "Diseño depurado, calidad de luz y precisión óptica para espacios donde cada detalle importa.",
         },
         {
           id: "garden-line",
           number: "02",
           title: "Garden Line",
-          claim: "Light the landscape. Keep the night.",
+          claim: "Iluminá el paisaje.\nConservá la noche.",
           copy: "Iluminación exterior en capas para jardines, terrazas, fachadas, senderos y paisajes.",
         },
         {
           id: "architectural",
           number: "03",
           title: "Architectural",
-          claim: "The fixture disappears. The architecture remains.",
+          claim: "La luminaria desaparece.\nEl diseño permanece.",
           copy: "Soluciones que se integran al espacio y dirigen la atención hacia aquello que realmente importa.",
         },
       ],
     },
     projects: {
       number: "06",
-      label: "Selected projects",
+      label: "Proyectos seleccionados",
       titleLine1: "La luz se entiende mejor",
       titleLine2: "cuando sucede.",
       copy: "Una selección de proyectos donde diseño, producto, servicio y ejecución se convierten en una experiencia concreta.",
       viewAll: "Ver todos los proyectos",
-      viewProject: "View project ↗",
+      viewProject: "Ver proyecto ↗",
     },
     material: {
-      label: "08 · Light + Material",
-      titleLine1: "Light reveals.",
-      titleLine2: "Material responds.",
+      label: "08 · Luz + Material",
+      titleLine1: "La luz revela.",
+      titleLine2: "El material responde.",
       copy: "La luz cambia según la superficie que encuentra. Diseñamos esa interacción para que cada material conserve su carácter y gane profundidad.",
-      list: ["Wood", "Stone", "Metal", "Concrete", "Textile", "Glass", "Vegetation"],
+      list: ["Madera", "Piedra", "Metal", "Hormigón", "Textil", "Vidrio", "Vegetación"],
     },
     customMade: {
       number: "10",
-      label: "Custom Made",
+      label: "A medida",
       titleLine1: "Algunos proyectos necesitan",
       titleLine2: "una solución que todavía no existe.",
       copy: "Adaptamos dimensiones, ópticas, temperatura de color, potencia, terminaciones e integración según el proyecto.",
-      claim: "Designed around your project.",
+      claim: "Diseñado en torno a tu proyecto.",
       cta: "Desarrollar una solución",
     },
     finalCta: {
-      label: "Every project starts with a conversation.",
-      titleLine1: "What should light do",
-      titleLine2: "for your space?",
+      label: "Todo proyecto empieza con una conversación.",
+      titleLine1: "¿Qué debería hacer la luz",
+      titleLine2: "en tu espacio?",
       cta: "Empezar un proyecto",
     },
     footer: {
@@ -376,13 +387,24 @@ export const dictionary: Record<Language, TranslationKeys> = {
       region: "Región",
       regionalTag: "Think regional. Work local.",
       rights: "Green Ray LED",
+      intro: "Cada proyecto empieza con una pregunta. Combinamos luz, óptica y arquitectura para definir la respuesta correcta para cada espacio.",
+      cta: "Conversemos",
+      brand: "Iluminación arquitectónica, óptica de precisión y soluciones integradas para espacios que exigen más de la luz.",
+      explore: "Explorar",
+      systems: "GREEN RAY · SISTEMAS DE ILUMINACIÓN",
+      regionsTop: "ARGENTINA · URUGUAY · LATAM",
+      headingA: "¿QUÉ DEBERÍA HACER",
+      headingAccent: "LA LUZ",
+      headingB: "EN TU ESPACIO?",
+      claimL1: "PENSÁ REGIONAL.",
+      claimL2: "TRABAJÁ LOCAL.",
     },
     projectDetail: {
       back: "← Proyectos",
       scopeLabel: "Alcance del proyecto",
       nextLabel: "Siguiente paso",
-      nextTitleLine1: "Every project starts",
-      nextTitleLine2: "with a conversation.",
+      nextTitleLine1: "Todo proyecto empieza",
+      nextTitleLine2: "con una conversación.",
       startProject: "Iniciar un proyecto",
     },
   },
@@ -594,6 +616,17 @@ export const dictionary: Record<Language, TranslationKeys> = {
       region: "Region",
       regionalTag: "Think regional. Work local.",
       rights: "Green Ray LED",
+      intro: "Every project begins with a question. We combine light, optics and architecture to define the right answer for each space.",
+      cta: "Let's talk",
+      brand: "Architectural lighting, precision optics and integrated solutions for spaces that demand more from light.",
+      explore: "Explore",
+      systems: "GREEN RAY · LIGHTING SYSTEMS",
+      regionsTop: "ARGENTINA · URUGUAY · LATAM",
+      headingA: "WHAT SHOULD",
+      headingAccent: "LIGHT",
+      headingB: "DO FOR YOUR SPACE?",
+      claimL1: "THINK REGIONAL.",
+      claimL2: "WORK LOCAL.",
     },
     projectDetail: {
       back: "← Projects",

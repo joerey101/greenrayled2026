@@ -1,56 +1,51 @@
+"use client";
+
 import styles from "./GreenRayFooter.module.css";
-
-type NavItem = { label: string; href: string };
-
-const DEFAULT_NAV_ITEMS: NavItem[] = [
-  { label: "Percepción", href: "#percepcion" },
-  { label: "Colecciones", href: "#lineas" },
-  { label: "Tecnología", href: "#tecnologia" },
-  { label: "Control de luz", href: "#beam-control" },
-  { label: "Integración", href: "#integracion" },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const REGIONS = ["Argentina", "Uruguay", "Latinoamérica"];
 
 export default function GreenRayFooter({
-  navItems = DEFAULT_NAV_ITEMS,
   email = "contact@greenrayled.com",
 }: {
-  navItems?: NavItem[];
   email?: string;
 }) {
+  const { t } = useLanguage();
+
+  // Nav del footer: mismas rutas que el header, con etiquetas traducidas.
+  const navItems = [
+    { label: t.nav.perception, href: "#percepcion" },
+    { label: t.nav.collections, href: "#lineas" },
+    { label: t.nav.technology, href: "#tecnologia" },
+    { label: t.nav.beam, href: "#beam-control" },
+    { label: t.nav.integration, href: "#integracion" },
+  ];
+
   return (
     <footer className={styles.footer} id="contacto">
       <div className={styles.lightField} aria-hidden="true" />
 
       <div className={styles.inner}>
         <div className={styles.topLine}>
-          <span>GREEN RAY · LIGHTING SYSTEMS</span>
-          <span>ARGENTINA · URUGUAY · LATAM</span>
+          <span>{t.footer.systems}</span>
+          <span>{t.footer.regionsTop}</span>
         </div>
 
         <section className={styles.hero} aria-labelledby="footer-heading">
           <h2 id="footer-heading" className={styles.heading}>
-            WHAT SHOULD
-            <br />
-            <span>LIGHT</span> DO
-            <br />
-            FOR YOUR SPACE?
+            {t.footer.headingA} <span>{t.footer.headingAccent}</span> {t.footer.headingB}
           </h2>
 
           <div className={styles.heroBottom}>
-            <p className={styles.intro}>
-              Every project begins with a question. We combine light, optics
-              and architecture to define the right answer for each space.
-            </p>
+            <p className={styles.intro}>{t.footer.intro}</p>
 
             <div className={styles.ctaWrap}>
               <a
                 className={styles.cta}
                 href={`mailto:${email}`}
-                aria-label={`Conversemos por email: ${email}`}
+                aria-label={`${t.footer.cta} — ${email}`}
               >
-                <span>Conversemos</span>
+                <span>{t.footer.cta}</span>
                 <span className={styles.arrow} aria-hidden="true">
                   ↗
                 </span>
@@ -69,20 +64,17 @@ export default function GreenRayFooter({
               width={196}
               height={24}
             />
-            <p>
-              Architectural lighting, precision optics and integrated
-              solutions for spaces that demand more from light.
-            </p>
+            <p>{t.footer.brand}</p>
 
             <p className={styles.claim}>
-              THINK REGIONAL.
+              {t.footer.claimL1}
               <br />
-              WORK LOCAL.
+              {t.footer.claimL2}
             </p>
           </div>
 
-          <nav className={styles.navColumn} aria-label="Navegación del footer">
-            <div className={styles.label}>EXPLORE</div>
+          <nav className={styles.navColumn} aria-label={t.footer.explore}>
+            <div className={styles.label}>{t.footer.explore}</div>
 
             {navItems.map((item) => (
               <a key={item.href} href={item.href}>
@@ -92,7 +84,7 @@ export default function GreenRayFooter({
           </nav>
 
           <div className={styles.navColumn}>
-            <div className={styles.label}>REGION</div>
+            <div className={styles.label}>{t.footer.region}</div>
 
             {REGIONS.map((region) => (
               <span key={region}>{region}</span>

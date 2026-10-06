@@ -78,11 +78,13 @@
 }
 
 .intro {
-  max-width: 540px;
+  /* Ancho pensado para que el corte caiga tras "arquitectura". */
+  max-width: 720px;
   margin: 0;
 
-  font-size: clamp(14px, 1.15vw, 16px);
-  line-height: 1.65;
+  /* ~20% más grande que antes (16 → 19px tope). */
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.6;
   color: var(--gr-muted);
 }
 
@@ -171,6 +173,7 @@
   font-size: 10px;
   line-height: 1;
   letter-spacing: 0.15em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.35);
 }
 
