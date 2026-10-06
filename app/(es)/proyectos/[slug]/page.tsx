@@ -13,7 +13,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((item) => item.slug === slug);
   if (!project) return {};
-  return { title: project.title, description: project.description };
+  return {
+    title: project.title,
+    description: project.description,
+    alternates: {
+      canonical: `/proyectos/${slug}`,
+      languages: {
+        es: `/proyectos/${slug}`,
+        "es-AR": `/proyectos/${slug}`,
+        en: `/en/proyectos/${slug}`,
+        "x-default": `/proyectos/${slug}`,
+      },
+    },
+  };
 }
 
 export default async function ProjectPage({ params }: Props) {
@@ -23,4 +35,3 @@ export default async function ProjectPage({ params }: Props) {
 
   return <ProjectContent project={project} />;
 }
-

@@ -1,12 +1,28 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const { t, language, setLanguage } = useLanguage();
+  const { t } = useLanguage();
+  const pathname = usePathname() || "/";
+
+  // El idioma lo define la URL: / = español, /en = inglés.
+  // El switch NAVEGA a la URL del otro idioma (clave para SEO/hreflang),
+  // conservando la misma página (p. ej. /proyectos/x ↔ /en/proyectos/x).
+  const isEn = pathname === "/en" || pathname.startsWith("/en/");
+  const basePath = isEn ? pathname.replace(/^\/en/, "") || "/" : pathname;
+  const esHref = basePath;
+  const enHref = basePath === "/" ? "/en" : `/en${basePath}`;
+  const current: "es" | "en" = isEn ? "en" : "es";
+
+  // Navegación dura: fuerza el layout correcto (<html lang>) y el SSR del idioma.
+  const goTo = (href: string) => {
+    if (typeof window !== "undefined") window.location.assign(href);
+  };
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -27,7 +43,7 @@ export default function Header() {
 
   return (
     <header className="site-header">
-      <Link href="/" className="brand" aria-label="Green Ray LED">
+      <Link href={isEn ? "/en" : "/"} className="brand" aria-label="Green Ray LED">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/greenled-white.svg"
@@ -48,18 +64,18 @@ export default function Header() {
         <div className="language-switch" role="group" aria-label="Idioma / Language">
           <button
             type="button"
-            className={language === "es" ? "active" : ""}
-            aria-pressed={language === "es"}
-            onClick={() => setLanguage("es")}
+            className={current === "es" ? "active" : ""}
+            aria-pressed={current === "es"}
+            onClick={() => goTo(esHref)}
           >
             ES
           </button>
           <span aria-hidden="true">/</span>
           <button
             type="button"
-            className={language === "en" ? "active" : ""}
-            aria-pressed={language === "en"}
-            onClick={() => setLanguage("en")}
+            className={current === "en" ? "active" : ""}
+            aria-pressed={current === "en"}
+            onClick={() => goTo(enHref)}
           >
             EN
           </button>
@@ -91,17 +107,17 @@ export default function Header() {
           <div className="mobile-lang-switch" role="group" aria-label="Idioma / Language">
             <button
               type="button"
-              className={language === "es" ? "active" : ""}
-              aria-pressed={language === "es"}
-              onClick={() => setLanguage("es")}
+              className={current === "es" ? "active" : ""}
+              aria-pressed={current === "es"}
+              onClick={() => goTo(esHref)}
             >
               ES
             </button>
             <button
               type="button"
-              className={language === "en" ? "active" : ""}
-              aria-pressed={language === "en"}
-              onClick={() => setLanguage("en")}
+              className={current === "en" ? "active" : ""}
+              aria-pressed={current === "en"}
+              onClick={() => goTo(enHref)}
             >
               EN
             </button>

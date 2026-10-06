@@ -20,7 +20,7 @@ const lineImages: Record<string, string> = {
   "architectural": "/images/viasono-detail-03.jpg",
 };
 
-export default function Home() {
+export default function HomePage() {
   const { t } = useLanguage();
 
   return (

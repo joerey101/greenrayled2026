@@ -11,20 +11,37 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("es");
+export function LanguageProvider({
+  children,
+  initialLanguage = "es",
+}: {
+  children: React.ReactNode;
+  initialLanguage?: Language;
+}) {
+  // El idioma lo determina la RUTA (/ = es, /en = en), no localStorage.
+  // Así el HTML del servidor ya viene en el idioma correcto (SEO) y no hay
+  // desajuste de hidratación. El switch del header navega entre URLs.
+  const [language, setLanguageState] = useState<Language>(initialLanguage);
 
+  // Guardamos la preferencia solo como conveniencia (no altera el render SSR).
   useEffect(() => {
-    const saved = localStorage.getItem("greenray_lang") as Language;
-    if (saved && (saved === "es" || saved === "en")) {
-      setLanguageState(saved);
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.setItem("greenray_lang", initialLanguage);
+      } catch {
+        /* no-op */
+      }
     }
-  }, []);
+  }, [initialLanguage]);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     if (typeof window !== "undefined") {
-      localStorage.setItem("greenray_lang", lang);
+      try {
+        localStorage.setItem("greenray_lang", lang);
+      } catch {
+        /* no-op */
+      }
     }
   };
 
