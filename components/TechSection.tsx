@@ -85,17 +85,18 @@ export default function TechSection() {
 
       <div className="tech-rail section-shell">
         <div className="tech-rail-copy">
-          <p className="micro-label">{t.tech.railLabel}</p>
+          {t.tech.railLabel ? <p className="micro-label">{t.tech.railLabel}</p> : null}
           <h3>{t.tech.railTitle}</h3>
           <p>{t.tech.railCopy}</p>
-          <p className="tech-rail-claim">{t.tech.railClaim}</p>
+          {t.tech.railCopy2 ? <p>{t.tech.railCopy2}</p> : null}
+          {t.tech.railClaim ? <p className="tech-rail-claim">{t.tech.railClaim}</p> : null}
         </div>
         {/* Imagen: sistema de riel — Joyería arquitectónica */}
         <div className="tech-rail-media">
           <div className="tech-rail-img-wrap">
             <Image
-              src="/images/joya.webp"
-              alt="Joyería arquitectónica — sistema de riel ultradelgado · Green Ray LED"
+              src="/images/rail-cafe.webp"
+              alt="Sistema de riel lineal en café de diseño con vista urbana · Green Ray LED"
               fill
               unoptimized
               className="tech-rail-img"

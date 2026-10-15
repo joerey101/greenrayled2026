@@ -70,7 +70,8 @@
 
 .heroBottom {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.7fr);
+  /* La primera columna (intro) toma todo el ancho disponible; la 2da solo lo del botón. */
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: clamp(34px, 5vw, 76px);
   align-items: end;
 
@@ -78,14 +79,16 @@
 }
 
 .intro {
-  /* Ancho pensado para que el corte caiga tras "arquitectura". */
-  max-width: 720px;
+  /* Ancho amplio para que las líneas largas (EN) entren completas en un renglón. */
+  max-width: 1040px;
   margin: 0;
 
   /* ~20% más grande que antes (16 → 19px tope). */
   font-size: clamp(16px, 1.4vw, 19px);
   line-height: 1.6;
   color: var(--gr-muted);
+  /* Respeta los saltos \n definidos en el diccionario (p. ej. EN en 3 líneas). */
+  white-space: pre-line;
 }
 
 .ctaWrap {
@@ -184,6 +187,15 @@
 
   font-size: 13px;
   line-height: 1.35;
+}
+
+/* Línea "Delivery: Global" — separada de la lista de oficinas, con acento de marca */
+.navColumn span.delivery {
+  margin-top: 14px;
+  color: var(--gr-accent);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .navColumn a {

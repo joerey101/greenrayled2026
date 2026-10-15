@@ -3,7 +3,7 @@
 import styles from "./GreenRayFooter.module.css";
 import { useLanguage } from "@/context/LanguageContext";
 
-const REGIONS = ["Argentina", "Uruguay", "Latinoamérica"];
+const REGIONS = ["Argentina", "Uruguay", "Chile", "México", "Puerto Rico"];
 
 export default function GreenRayFooter({
   email = "contact@greenrayled.com",
@@ -89,6 +89,10 @@ export default function GreenRayFooter({
             {REGIONS.map((region) => (
               <span key={region}>{region}</span>
             ))}
+
+            {t.footer.delivery ? (
+              <span className={styles.delivery}>{t.footer.delivery}</span>
+            ) : null}
 
             {/* © + redes: al fondo de la columna, a la misma altura que "WORK LOCAL." */}
             <div className={styles.legal}>

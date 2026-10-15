@@ -41,6 +41,7 @@ export type TranslationKeys = {
     railLabel: string;
     railTitle: string;
     railCopy: string;
+    railCopy2?: string;
     railClaim: string;
   };
   beam: {
@@ -154,6 +155,7 @@ export type TranslationKeys = {
     subtitle: string;
     navigate: string;
     region: string;
+    delivery?: string;
     regionalTag: string;
     rights: string;
     intro: string;
@@ -197,7 +199,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       eyebrow: "Luz diseñada para vivirse.",
       titleLine1: "LUZ, DISEÑADA",
       titleLine2: "PARA SENTIRSE.",
-      description: "Diseñamos la luz. Transformamos la experiencia.",
+      description: "Diseñamos la luz. Creamos experiencia.",
       ctaProfessional: "Soy profesional / empresa",
       ctaResidential: "Quiero iluminar mi espacio",
       viewProject: "Ver proyecto",
@@ -206,7 +208,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     perception: {
       label: "Percepción de la luz",
-      titleLine1: "La luz no es solo iluminación.",
+      titleLine1: "Donde la luz habla suave.",
       titleLine2: "Es arquitectura invisible.",
       quote: "Luz que susurra lujo.",
       concepts: [
@@ -229,10 +231,11 @@ export const dictionary: Record<Language, TranslationKeys> = {
         { icon: "temp", title: "Temperatura de color", copy: "De 2700K a 6500K. Cada espacio requiere una temperatura distinta para revelar correctamente sus materiales." },
         { icon: "rail", title: "Sistemas de riel", copy: "Ultradelgados, magnéticos o de inducción. Flexibilidad total en la instalación con presencia física mínima." },
       ],
-      railLabel: "Sistemas de riel",
-      railTitle: "Joyería arquitectónica.",
-      railCopy: "Los sistemas de riel de nueva generación permiten reconfigurar la iluminación de un espacio sin obra. Ultradelgados, elegantes, con conexión magnética.",
-      railClaim: "Tecnología como precisión. Arquitectura como lienzo.",
+      railLabel: "",
+      railTitle: "Contraste cinematográfico",
+      railCopy: "Los spots de haz estrecho definen siluetas y elementos arquitectónicos, generando un contraste controlado y una sensación cinematográfica del espacio.",
+      railCopy2: "Mediante sistemas de regulación y control de escenas, la luz transiciona con naturalidad: un suave ascenso al atardecer, un resplandor contenido para la contemplación nocturna.",
+      railClaim: "",
     },
     beam: {
       label: "Control de luz",
@@ -257,9 +260,11 @@ export const dictionary: Record<Language, TranslationKeys> = {
         { name: "Corporativo", copy: "Espacios de trabajo, salas de reunión y áreas de representación. Calidad de luz que impacta en la productividad." },
       ],
       projects: [
-        { name: "Charo", location: "Buenos Aires · Argentina", tag: "Gastronomía / Hotelería", imageHint: "Ambiente Charo — profundidad, calidez, contraste" },
-        { name: "McDonald's", location: "Argentina", tag: "Marca global / Comercial", imageHint: "Espacio McDonald's — estándar internacional, iluminación comercial" },
+        { name: "Charo", location: "Montevideo · Uruguay", tag: "Gastronomía / Hotelería", imageHint: "Ambiente Charo — profundidad, calidez, contraste" },
+        { name: "McDonald's", location: "South America & Caribe", tag: "Marca global / Comercial", imageHint: "Espacio McDonald's — estándar internacional, iluminación comercial" },
         { name: "Viasono", location: "Buenos Aires · Argentina", tag: "Retail / High End", imageHint: "Viasono — producto, materialidad, luz controlada" },
+        { name: "McDonald's", location: "San Juan · Puerto Rico", tag: "Marca global / Comercial", imageHint: "McDonald's San Juan — iluminación comercial exterior" },
+        { name: "McDonald's", location: "Ciudad de Panamá · Panamá", tag: "Marca global / Comercial", imageHint: "McDonald's Ciudad de Panamá — interior comercial" },
       ],
       validation: "Green Ray trabaja con marcas globales aplicando estándares internacionales de iluminación.",
       cta: "Desarrollar un proyecto comercial",
@@ -268,7 +273,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       label: "Integración arquitectónica",
       titleLine1: "La luminaria desaparece.",
       titleLine2: "La arquitectura permanece.",
-      copy: "La integración completa de la luminaria dentro de la arquitectura es uno de los valores fundamentales de Green Ray. No se trata de poner focos. Se trata de construir luz desde adentro.",
+      copy: "Diseñamos con intención.\nCada proyecto comienza por definir su propósito —una conversación tranquila, una cena al anochecer o la soledad contemplativa. A partir de ahí, moldeamos una luz que sirve al momento, no a la luminaria.",
       methods: [
         "Embutida en cielorraso",
         "Enrasada",
@@ -323,30 +328,30 @@ export const dictionary: Record<Language, TranslationKeys> = {
     collections: {
       number: "02",
       label: "Colecciones",
-      titleLine1: "Una solución de luz",
-      titleLine2: "para cada espacio.",
+      titleLine1: "Iluminación diseñada con mesura,",
+      titleLine2: "intención y profundidad.",
       explore: "Explorar",
       items: [
         {
           id: "high-end",
           number: "01",
           title: "High End",
-          claim: "La luz se vuelve parte\nde la arquitectura.",
-          copy: "Diseño depurado, calidad de luz y precisión óptica para espacios donde cada detalle importa.",
+          claim: "Lujo silencioso,\ndiseñado en luz.",
+          copy: "Dejamos que la intención guíe la ubicación de cada luminaria, la intensidad y el contraste. Nada es arbitrario. Cada haz tiene una razón.",
         },
         {
           id: "garden-line",
           number: "02",
           title: "Garden Line",
-          claim: "Iluminá el paisaje.\nConservá la noche.",
-          copy: "Iluminación exterior en capas para jardines, terrazas, fachadas, senderos y paisajes.",
+          claim: "Una forma más serena de vivir\nel lujo al aire libre.",
+          copy: "Usamos luz rasante ascendente para revelar las texturas de la piedra, la madera y el follaje. Las sombras profundas entre los acentos introducen ritmo, profundidad e intriga visual.",
         },
         {
           id: "architectural",
           number: "03",
           title: "Architectural",
-          claim: "La luminaria desaparece.\nEl diseño permanece.",
-          copy: "Soluciones que se integran al espacio y dirigen la atención hacia aquello que realmente importa.",
+          claim: "Diseñamos la luz por capas.",
+          copy: "Los baños de luz ambiental generan calma.\nLa luz funcional focalizada aporta claridad.\nLos acentos escultóricos suman profundidad y dramatismo.\nJuntos crean equilibrio, confort y riqueza visual.",
         },
       ],
     },
@@ -384,10 +389,11 @@ export const dictionary: Record<Language, TranslationKeys> = {
     footer: {
       subtitle: "Lighting Design · Technology · Experience",
       navigate: "Navegación",
-      region: "Región",
+      region: "Oficinas",
+      delivery: "Envíos: Global",
       regionalTag: "Think regional. Work local.",
       rights: "Green Ray LED",
-      intro: "Cada proyecto empieza con una pregunta. Combinamos luz, óptica y arquitectura para definir la respuesta correcta para cada espacio.",
+      intro: "Componemos la luz como una coreografía silenciosa.\nLa luz revela. La sombra oculta.\nJuntas, dan forma a entornos exteriores privados: refinados, intencionales y silenciosamente inolvidables.",
       cta: "Conversemos",
       brand: "Iluminación arquitectónica, óptica de precisión y soluciones integradas para espacios que exigen más de la luz.",
       explore: "Explorar",
@@ -426,7 +432,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       eyebrow: "Light designed to be experienced.",
       titleLine1: "LIGHT, DESIGNED",
       titleLine2: "TO BE FELT.",
-      description: "We design light. We transform the experience.",
+      description: "We design light. We create experience.",
       ctaProfessional: "I'm a professional / company",
       ctaResidential: "I want to illuminate my space",
       viewProject: "View project",
@@ -435,7 +441,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
     },
     perception: {
       label: "Perception of Light",
-      titleLine1: "Light is not just illumination.",
+      titleLine1: "Where light speaks softly.",
       titleLine2: "It is invisible architecture.",
       quote: "Light that whispers luxury.",
       concepts: [
@@ -458,10 +464,11 @@ export const dictionary: Record<Language, TranslationKeys> = {
         { icon: "temp", title: "Color temperature", copy: "From 2700K to 6500K. Each space requires a different temperature to correctly reveal its materials." },
         { icon: "rail", title: "Rail systems", copy: "Ultra-thin, magnetic, or inductive. Full installation flexibility with minimal physical presence." },
       ],
-      railLabel: "Rail Systems",
-      railTitle: "Architectural jewelry.",
-      railCopy: "Next-generation rail systems allow spaces to be reconfigured without construction. Ultra-thin, elegant, with magnetic connection.",
-      railClaim: "Technology as precision. Architecture as canvas.",
+      railLabel: "",
+      railTitle: "Cinematic Contrast",
+      railCopy: "Narrow-beam spotlights define silhouettes and architectural elements, creating controlled contrast and a cinematic sense of space.",
+      railCopy2: "Through dimming systems and scene control, light transitions naturally: a subtle rise at dusk, a restrained glow for late-night contemplation.",
+      railClaim: "",
     },
     beam: {
       label: "Light Control",
@@ -486,9 +493,11 @@ export const dictionary: Record<Language, TranslationKeys> = {
         { name: "Corporate", copy: "Workspaces, meeting rooms, and representation areas. Light quality that impacts productivity." },
       ],
       projects: [
-        { name: "Charo", location: "Buenos Aires · Argentina", tag: "Gastronomy / Hospitality", imageHint: "Charo atmosphere — depth, warmth, contrast" },
-        { name: "McDonald's", location: "Argentina", tag: "Global Brand / Commercial", imageHint: "McDonald's space — international standards, commercial lighting" },
+        { name: "Charo", location: "Montevideo · Uruguay", tag: "Gastronomy / Hospitality", imageHint: "Charo atmosphere — depth, warmth, contrast" },
+        { name: "McDonald's", location: "South America & Caribe", tag: "Global Brand / Commercial", imageHint: "McDonald's space — international standards, commercial lighting" },
         { name: "Viasono", location: "Buenos Aires · Argentina", tag: "Retail / High End", imageHint: "Viasono — product, materiality, controlled light" },
+        { name: "McDonald's", location: "San Juan · Puerto Rico", tag: "Global Brand / Commercial", imageHint: "McDonald's San Juan — exterior commercial lighting" },
+        { name: "McDonald's", location: "Panama City · Panama", tag: "Global Brand / Commercial", imageHint: "McDonald's Panama City — commercial interior" },
       ],
       validation: "Green Ray works with global brands applying international lighting standards.",
       cta: "Develop a commercial project",
@@ -497,7 +506,7 @@ export const dictionary: Record<Language, TranslationKeys> = {
       label: "Architectural Integration",
       titleLine1: "The fixture disappears.",
       titleLine2: "The architecture remains.",
-      copy: "The complete integration of the fixture within architecture is one of Green Ray's fundamental values. It's not about installing spotlights. It's about building light from within.",
+      copy: "We design with intention.\nEvery project begins by defining its purpose—quiet conversation, evening dining, or contemplative solitude. From there, we shape light that serves the moment, not the fixture.",
       methods: [
         "Recessed in ceiling",
         "Flush-mounted",
@@ -552,30 +561,30 @@ export const dictionary: Record<Language, TranslationKeys> = {
     collections: {
       number: "02",
       label: "Collections",
-      titleLine1: "A solution for every way",
-      titleLine2: "of inhabiting light.",
+      titleLine1: "Lighting designed with restraint,",
+      titleLine2: "intention, and depth.",
       explore: "Explore",
       items: [
         {
           id: "high-end",
           number: "01",
           title: "High End",
-          claim: "Light becomes part of the architecture.",
-          copy: "Refined design, light quality, and optical precision for spaces where every detail matters.",
+          claim: "Silent luxury,\ndesigned in light.",
+          copy: "We let intention guide fixture placement, intensity, and contrast. Nothing is arbitrary. Every beam has a reason.",
         },
         {
           id: "garden-line",
           number: "02",
           title: "Garden Line",
-          claim: "Light the landscape. Keep the night.",
-          copy: "Layered exterior lighting for gardens, terraces, facades, pathways, and landscapes.",
+          claim: "A quieter way to experience\nluxury outdoors.",
+          copy: "We use grazing uplights to reveal the textures of stone, wood, and foliage. Deep shadows between highlights introduce rhythm, depth, and visual intrigue.",
         },
         {
           id: "architectural",
           number: "03",
           title: "Architectural",
-          claim: "The fixture disappears. The architecture remains.",
-          copy: "Solutions that seamlessly integrate into the space and direct attention to what truly matters.",
+          claim: "We design with light in layers.",
+          copy: "Ambient washes establish calm.\nFocused task lighting delivers clarity.\nSculptural accents introduce depth and drama.\nTogether, they create balance, comfort, and visual richness.",
         },
       ],
     },
@@ -613,10 +622,11 @@ export const dictionary: Record<Language, TranslationKeys> = {
     footer: {
       subtitle: "Lighting Design · Technology · Experience",
       navigate: "Navigation",
-      region: "Region",
+      region: "Offices",
+      delivery: "Delivery: Global",
       regionalTag: "Think regional. Work local.",
       rights: "Green Ray LED",
-      intro: "Every project begins with a question. We combine light, optics and architecture to define the right answer for each space.",
+      intro: "We compose light as a quiet choreography.\nLight reveals. Shadow conceals.\nTogether, they shape private outdoor environments refined, intentional, and quietly unforgettable.",
       cta: "Let's talk",
       brand: "Architectural lighting, precision optics and integrated solutions for spaces that demand more from light.",
       explore: "Explore",

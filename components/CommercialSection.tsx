@@ -13,9 +13,11 @@ const VERTICALS = [
 
 // Fotos reales por índice de proyecto (el resto muestra placeholder)
 const PROJECT_IMAGES: Record<number, string> = {
-  0: "/images/charo_light.webp",     // Charo
+  0: "/images/charo-exterior.jpg",   // Charo
   1: "/images/MC%20AOTA.jpg",        // McDonald's
   2: "/images/Viasono%20BA%2002.jpg", // Viasono
+  3: "/images/mcdonalds-sanjuan.jpg", // McDonald's San Juan (fila extra)
+  4: "/images/mcdonalds-sanjuan-interior.webp", // McDonald's San Juan interior (fila extra)
 };
 
 export default function CommercialSection() {
@@ -44,9 +46,9 @@ export default function CommercialSection() {
         ))}
       </div>
 
-      {/* Projects grid — placeholders for Charo, McDonald's, etc. */}
+      {/* Projects grid — mosaico principal (3 primeros) */}
       <div className="commercial-projects section-shell">
-        {t.commercial.projects.map((proj, i) => {
+        {t.commercial.projects.slice(0, 3).map((proj, i) => {
           const img = PROJECT_IMAGES[i];
           const minHeight = i === 0 ? "600px" : "280px";
           return (
@@ -86,6 +88,52 @@ export default function CommercialSection() {
           );
         })}
       </div>
+
+      {/* Fila extra 50/50 (proyectos a partir del 4º) */}
+      {t.commercial.projects.length > 3 && (
+        <div className="commercial-projects-extra section-shell">
+          {t.commercial.projects.slice(3).map((proj, j) => {
+            const idx = j + 3;
+            const img = PROJECT_IMAGES[idx];
+            return (
+              <div className="commercial-project-card commercial-project-card-extra" key={idx}>
+                <div
+                  className="commercial-project-img"
+                  style={img ? { position: "relative" } : undefined}
+                >
+                  {img ? (
+                    <Image
+                      src={img}
+                      alt={proj.name}
+                      fill
+                      quality={85}
+                      unoptimized
+                      sizes="(max-width: 1050px) 100vw, 50vw"
+                      className="cover-image"
+                      style={{ objectFit: "cover" }}
+                    />
+                  ) : (
+                    <div className="perception-img-placeholder" aria-label={proj.name ? `Project image: ${proj.name}` : "Espacio reservado"}>
+                      <div className="perception-img-placeholder-inner">
+                        <span className="placeholder-label">FOTOGRAFÍA</span>
+                        <span className="placeholder-desc">{proj.imageHint}</span>
+                        <span className="placeholder-size">(1200 × 800 px · landscape)</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                {proj.name ? (
+                  <div className="commercial-project-meta">
+                    <strong>{proj.name}</strong>
+                    <span>{proj.location}</span>
+                    <span className="commercial-project-tag">{proj.tag}</span>
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       <div className="commercial-footer section-shell">
         <p className="commercial-validation">{t.commercial.validation}</p>

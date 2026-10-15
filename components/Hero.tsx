@@ -12,12 +12,12 @@ const HERO_SLIDES = [
     alt: "Green Ray LED — Luz de alta precisión sobre primer plano editorial",
   },
   {
-    src: "/images/design-01.jpg",
-    alt: "Green Ray LED — Iluminación arquitectónica en living de diseño",
+    src: "/images/hero-bar-verde.jpg",
+    alt: "Green Ray LED — Iluminación de ambiente en bar con lámparas verdes",
   },
 ];
 
-const SLIDE_INTERVAL = 6000; // ms entre transiciones
+const SLIDE_INTERVAL = 10000; // ms entre transiciones
 
 export default function Hero() {
   const { t } = useLanguage();

@@ -15,9 +15,9 @@ import GreenRayFooter from "@/components/GreenRayFooter/GreenRayFooter";
 import { useLanguage } from "@/context/LanguageContext";
 
 const lineImages: Record<string, string> = {
-  "high-end": "/images/viasono-detail-02.jpg",
-  "garden-line": "/images/editorial-01.jpg",
-  "architectural": "/images/viasono-detail-03.jpg",
+  "high-end": "/images/high-end-arcos.jpg",
+  "garden-line": "/images/garden-line-noche.jpg",
+  "architectural": "/images/architectural-showroom.jpg",
 };
 
 export default function HomePage() {
@@ -38,7 +38,7 @@ export default function HomePage() {
         <div className="section-shell">
           <SectionIntro
             label={t.collections.label}
-            title={<><span className="nowrap-desktop">{t.collections.titleLine1}</span><br />{t.collections.titleLine2}</>}
+            title={<><span className="nowrap-desktop">{t.collections.titleLine1}</span>{t.collections.titleLine2 ? <><br />{t.collections.titleLine2}</> : null}</>}
           />
         </div>
         <div className="line-list">
@@ -57,7 +57,7 @@ export default function HomePage() {
                 <div className="line-number">{line.number}</div>
                 <h3>{line.title}</h3>
                 <p className="line-claim">{line.claim}</p>
-                <p>{line.copy}</p>
+                <p className="line-body">{line.copy}</p>
                 <ArrowLink href="#contacto" inverted disabled>{t.collections.explore} {line.title}</ArrowLink>
               </div>
             </article>

@@ -82,6 +82,8 @@ main { overflow: clip; }
 .section-intro h2 { font-size: clamp(44px, 5.3vw, 92px); font-weight: 300; letter-spacing: -.05em; line-height: .98; margin: 36px 0 0; }
 /* nowrap solo en desktop; en mobile el título puede cortar para no desbordar */
 .nowrap-desktop { white-space: nowrap; }
+/* Copy de colección: respeta los saltos de línea definidos con \n en el diccionario */
+.line-body { white-space: pre-line; }
 .section-intro > p { max-width: 580px; color: #6d6b65; font-size: 16px; line-height: 1.7; }
 .manifesto-copy { padding-top: 50px; max-width: 470px; }
 .manifesto-copy p { color: #67655f; line-height: 1.72; }
@@ -917,6 +919,17 @@ main { overflow: clip; }
   margin-bottom: 60px;
 }
 .commercial-project-card { display: flex; flex-direction: column; gap: 12px; height: 100%; }
+/* Fila extra de proyectos: dos tarjetas 50% / 50% debajo del mosaico */
+.commercial-projects-extra {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 60px;
+  align-items: start;
+}
+/* Altura según la relación de aspecto real de la foto → se ve completa, sin recorte */
+.commercial-project-card-extra .commercial-project-img { aspect-ratio: 2000 / 1618; }
+.commercial-project-card-extra .commercial-project-img .perception-img-placeholder { min-height: 0; height: 100%; }
 .commercial-project-card-1 { grid-row: span 2; }
 .commercial-project-img { position: relative; }
 /* La imagen destacada crece para llenar las 2 filas → su base coincide con la base de la 2da imagen (mosaico prolijo en desktop) */
@@ -984,7 +997,7 @@ main { overflow: clip; }
   margin: 20px 0 36px;
 }
 .arch-title-em { font-style: normal; color: rgba(243,242,237,.35); }
-.arch-body { color: #8a8a83; max-width: 480px; line-height: 1.7; margin: 0 0 40px; }
+.arch-body { color: #8a8a83; max-width: 480px; line-height: 1.7; margin: 0 0 40px; white-space: pre-line; }
 .arch-methods {
   display: flex;
   flex-direction: column;
@@ -1167,6 +1180,7 @@ main { overflow: clip; }
   .commercial-vertical { border-right: 0; border-bottom: 1px solid var(--line-dark); padding-left: 0; padding-right: 0; }
   .commercial-vertical:last-child { border-bottom: 0; }
   .commercial-projects { grid-template-columns: 1fr; }
+  .commercial-projects-extra { grid-template-columns: 1fr; }
   .commercial-project-card-1 { grid-column: auto; }
   .commercial-footer { flex-direction: column; align-items: flex-start; }
   .arch-media { grid-template-rows: 300px 200px; }
